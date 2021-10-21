@@ -14,6 +14,14 @@ public class Spawner : MonoBehaviour
 
         int num = Random.Range(0, 2);
         Instantiate(landFabs[num], new Vector3(0, 0, 0), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(15, 0, 0), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(-15, 0, 0), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(0, 0, 15), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(0, 0, -15), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(15, 0, 15), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(15, 0, -15), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(-15, 0, -15), landFabs[num].transform.rotation);
+        Instantiate(landFabs[num], new Vector3(-15, 0, 15), landFabs[num].transform.rotation);
     }
 
     // Update is called once per frame
