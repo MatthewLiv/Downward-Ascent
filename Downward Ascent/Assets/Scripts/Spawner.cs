@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] Starters;
+    public GameObject yoyoyo;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,11 @@ public class Spawner : MonoBehaviour
         int num = Random.Range(0, 5);
         Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
-        g.transform.localPosition = position;
+        g.transform.position = position;
+        GameObject THEg = Instantiate(yoyoyo, position, yoyoyo.transform.rotation);
+        THEg.transform.position = g.transform.position;
+
+
 
     }
 

@@ -315,36 +315,6 @@ MonoBehaviour:
   horizontalInput: 0
   verticalInput: 0
   turnSpeed: 100
---- !u!1 &1015742093
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1015742094}
-  m_Layer: 0
-  m_Name: Starter Areas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1015742094
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1015742093}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -79.33855, y: -23.775354, z: 8.859398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1858746764
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +350,7 @@ MonoBehaviour:
   - {fileID: 4855275701506000581, guid: 1c55c217b59149b4487f1fda8487a921, type: 3}
   - {fileID: 3322755622346683399, guid: c82ed349fb125604ca188f61c5aeaeb4, type: 3}
   - {fileID: 6839839264392549495, guid: 9714e14b1ceb1294e83f31ce66d748d0, type: 3}
+  yoyoyo: {fileID: 757865494344158081, guid: 4d2b5fd41efd18f4e9d31124be4b606c, type: 3}
 --- !u!4 &1858746766
 Transform:
   m_ObjectHideFlags: 0
