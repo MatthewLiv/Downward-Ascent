@@ -12,9 +12,11 @@ public class Spawner : MonoBehaviour
         //int num = r.Next(0, 1);
         // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
 
-        int num = Random.Range(1, 2);
-        Instantiate(Starters[num], new Vector3(0, 0, 0), Starters[num].transform.rotation);
-       
+        int num = Random.Range(0, 2);
+        Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
+        GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
+        g.transform.localPosition = position;
+
     }
 
     // Update is called once per frame
