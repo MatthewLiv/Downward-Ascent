@@ -14,11 +14,12 @@ public class Spawner : MonoBehaviour
         // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
 
         int num = Random.Range(0, 5);
-        Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
+        Vector3 position = new Vector3(10.0f, 10.0f, 10.0f);
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
         g.transform.position = position;
-        GameObject THEg = Instantiate(yoyoyo, position, yoyoyo.transform.rotation);
-        THEg.transform.position = g.transform.position;
+        Vector3 position2 = new Vector3(52, -192, 137);
+        GameObject THEg = Instantiate(yoyoyo, position2, yoyoyo.transform.rotation);
+        THEg.transform.position = position2;
 
 
 
