@@ -13,13 +13,13 @@ public class Spawner : MonoBehaviour
         //int num = r.Next(0, 1);
         // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
 
-        int num = Random.Range(0, 5);
-        Vector3 position = new Vector3(0.0f, 0.0f, 0.0f);
+        int num = Random.Range(0, 1);
+        Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
-        g.transform.position = position;
-        Vector3 position2 = new Vector3(0, 0, 0);
-        GameObject THEg = Instantiate(yoyoyo, position2, yoyoyo.transform.rotation);
-        THEg.transform.position = position2;
+        g.localPosition = new Vector3(-1 * g.transform.TransformPoint(0).x(), -1 * g.transform.TransformPoint(0).y(), -1 * g.transform.TransformPoint(0).z())
+       // Vector3 position2 = new Vector3(0, 0, 0);
+       //GameObject THEg = Instantiate(yoyoyo, position2, yoyoyo.transform.rotation);
+       // THEg.transform.position = position2;
 
 
 
