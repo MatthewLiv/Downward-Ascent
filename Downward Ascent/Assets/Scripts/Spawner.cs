@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public GameObject[] Starters;
     public GameObject yoyoyo;
+    private int[] path1 = new int[9];
     
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,19 @@ public class Spawner : MonoBehaviour
         int num = Random.Range(0, 1);
         Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
-        Instantiate(yoyoyo, new Vector3(15, 0, 0), yoyoyo.transform.rotation);
-        
-        
-       // Vector3 position2 = new Vector3(0, 0, 0);
-       //GameObject THEg = Instantiate(yoyoyo, position2, yoyoyo.transform.rotation);
-       // THEg.transform.position = position2;
+
+        int random = Random.Range(0, 2);
+        if (random == 1)
+        {
+            Instantiate(yoyoyo, new Vector3(16, 0, 0), yoyoyo.transform.rotation);
+        }
+        else
+        {
+            Instantiate(yoyoyo, new Vector3(-16, 0, 0), yoyoyo.transform.rotation);
+        }
+
+        Debug.LogError(path1[0]);
+      
 
 
 
