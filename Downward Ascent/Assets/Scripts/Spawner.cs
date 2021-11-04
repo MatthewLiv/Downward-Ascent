@@ -5,7 +5,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] Starters;
-    public GameObject yoyoyo;
+    public GameObject[] stays;
+
     private int[] path1 = new int[9];
     
     // Start is called before the first frame update
@@ -20,18 +21,12 @@ public class Spawner : MonoBehaviour
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
         placeR(g);
 
-        /*int random = Random.Range(0, 2);
-        if (random == 1)
-        {
-            Instantiate(yoyoyo, new Vector3(16, 0, 0), yoyoyo.transform.rotation);
-        }
-        else
-        {
-            Instantiate(yoyoyo, new Vector3(-16, 0, 0), yoyoyo.transform.rotation);
-        }
+        GameObject O = Instantiate(stays[0], new Vector3(16, 0, 0), Starters[num].transform.rotation);
+        placeR(O);
+        
 
-        Debug.LogError(path1[0]);
-      */
+
+
       
 
 
@@ -47,20 +42,20 @@ public class Spawner : MonoBehaviour
         else if (num == 1)
         {
             g.transform.Rotate(Vector3.up, 90);
-            g.transform.Translate(new Vector3(-15, 0, 0));
+            g.transform.Translate(new Vector3(g.transform.position.x - 15, g.transform.position.y, g.transform.position.z));
         }
         else if (num == 2)
         {
             g.transform.Rotate(Vector3.up, 180);
-            g.transform.Translate(new Vector3(-15, 0, -15));
+            g.transform.Translate(new Vector3(g.transform.position.x - 15, g.transform.position.y, g.transform.position.z - 15));
         }
         else
         {
             g.transform.Rotate(Vector3.up, 270);
-            g.transform.Translate(new Vector3(0, 0, -15));
+            g.transform.Translate(new Vector3(g.transform.position.x, g.transform.position.y, g.transform.position.z - 15));
        // g.transform.Position(new Vector3(15, 0, 0));
            // g.transform.SetPositionAndRotation(new Vector3(15, 0, 0), new Quaternion(0, 180, 0, 1));  
-        }
+       }
         
 
 
