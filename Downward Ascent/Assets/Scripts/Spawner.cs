@@ -22,6 +22,9 @@ public class Spawner : MonoBehaviour
         placeR(g);
 
         GameObject O = Instantiate(stays[0], new Vector3(16, 0, 0), Starters[num].transform.rotation);
+        //placeR(O);
+
+
         GameObject O1 = Instantiate(stays[0], new Vector3(16, 0, 16), Starters[num].transform.rotation);
         GameObject O2 = Instantiate(stays[0], new Vector3(16, 0, -16), Starters[num].transform.rotation);
         GameObject O3 = Instantiate(stays[0], new Vector3(0, 0, 16), Starters[num].transform.rotation);
@@ -30,7 +33,7 @@ public class Spawner : MonoBehaviour
         GameObject O6 = Instantiate(stays[0], new Vector3(-16, 0, -16), Starters[num].transform.rotation);
         GameObject O7 = Instantiate(stays[0], new Vector3(-16, 0, 0), Starters[num].transform.rotation);
         
-        //placeR(O);
+
 
 
 
@@ -42,7 +45,7 @@ public class Spawner : MonoBehaviour
 
     private void placeR(GameObject g)
     {
-        int num = Random.Range(0, 4);
+        int num = Random.Range(0, 2);
         if (num == 0)
         {
             return;
