@@ -16,18 +16,26 @@ public class Spawner : MonoBehaviour
         //int num = r.Next(0, 1);
         // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
 
-        int num = Random.Range(1, 2);
+        int num = Random.Range(0, 5);
         Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
         placeR(g);
 
         GameObject O = Instantiate(stays[0], new Vector3(16, 0, 0), Starters[num].transform.rotation);
-        placeR(O);
+        GameObject O1 = Instantiate(stays[0], new Vector3(16, 0, 16), Starters[num].transform.rotation);
+        GameObject O2 = Instantiate(stays[0], new Vector3(16, 0, -16), Starters[num].transform.rotation);
+        GameObject O3 = Instantiate(stays[0], new Vector3(0, 0, 16), Starters[num].transform.rotation);
+        GameObject O4 = Instantiate(stays[0], new Vector3(0, 0, -16), Starters[num].transform.rotation);
+        GameObject O5 = Instantiate(stays[0], new Vector3(-16, 0, 16), Starters[num].transform.rotation);
+        GameObject O6 = Instantiate(stays[0], new Vector3(-16, 0, -16), Starters[num].transform.rotation);
+        GameObject O7 = Instantiate(stays[0], new Vector3(-16, 0, 0), Starters[num].transform.rotation);
         
+        //placeR(O);
 
 
 
-      
+
+
 
 
     }
