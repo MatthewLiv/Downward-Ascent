@@ -19,11 +19,11 @@ public class Spawner : MonoBehaviour
         int num = Random.Range(4, 5);
         Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
-        placeR(g);
+        //placeR(g);
 
         GameObject O = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
-        placeR(O);
-        O.transform.Translate(new Vector3(16, 0, 0));
+        placeR(O, 16, 0);
+        //O.transform.Translate(new Vector3(O.transform.position.x + 16, O.transform.position.y, O.transform.position.z));
 
 
       /*  GameObject O1 = Instantiate(stays[0], new Vector3(16, 0, 16), Starters[num].transform.rotation);
@@ -44,27 +44,28 @@ public class Spawner : MonoBehaviour
 
     }
 
-    private void placeR(GameObject g)
+    private void placeR(GameObject g, int X, int Z)
     {
-        int num = Random.Range(0, 4);
+        int num = Random.Range(0, 1);
         if (num == 0)
         {
-            return;
+            g.transform.Translate(new Vector3(X, 0, Z));
+            
         }
         else if (num == 1)
         {
             g.transform.Rotate(Vector3.up, 90);
-            g.transform.Translate(new Vector3(g.transform.position.x - 15, g.transform.position.y, g.transform.position.z));
+            g.transform.Translate(new Vector3(-15 + Z, 0, 0 + X));
         }
         else if (num == 2)
         {
             g.transform.Rotate(Vector3.up, 180);
-            g.transform.Translate(new Vector3(g.transform.position.x - 15, g.transform.position.y, g.transform.position.z - 15));
+            g.transform.Translate(new Vector3(-15, 0, -15));
         }
         else
         {
             g.transform.Rotate(Vector3.up, 270);
-            g.transform.Translate(new Vector3(g.transform.position.x, g.transform.position.y, g.transform.position.z - 15));
+            g.transform.Translate(new Vector3(0, 0, -15));
        // g.transform.Position(new Vector3(15, 0, 0));
            // g.transform.SetPositionAndRotation(new Vector3(15, 0, 0), new Quaternion(0, 180, 0, 1));  
        }    
