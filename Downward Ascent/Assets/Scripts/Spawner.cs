@@ -21,19 +21,23 @@ public class Spawner : MonoBehaviour
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
         //placeR(g);
 
-        GameObject O = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
-        placeR(O, 16, 0);
-        //O.transform.Translate(new Vector3(O.transform.position.x + 16, O.transform.position.y, O.transform.position.z));
+          GameObject O = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+          placeR(O, 16, 0);
 
+        GameObject O1 = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O1, 16, 16);
 
-      /*  GameObject O1 = Instantiate(stays[0], new Vector3(16, 0, 16), Starters[num].transform.rotation);
-        GameObject O2 = Instantiate(stays[0], new Vector3(16, 0, -16), Starters[num].transform.rotation);
-        GameObject O3 = Instantiate(stays[0], new Vector3(0, 0, 16), Starters[num].transform.rotation);
-        GameObject O4 = Instantiate(stays[0], new Vector3(0, 0, -16), Starters[num].transform.rotation);
-        GameObject O5 = Instantiate(stays[0], new Vector3(-16, 0, 16), Starters[num].transform.rotation);
-        GameObject O6 = Instantiate(stays[0], new Vector3(-16, 0, -16), Starters[num].transform.rotation);
-        GameObject O7 = Instantiate(stays[0], new Vector3(-16, 0, 0), Starters[num].transform.rotation);
-        */
+        GameObject O2 = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O2, 16, -16);
+
+        /*  
+          
+          GameObject O3 = Instantiate(stays[0], new Vector3(0, 0, 16), Starters[num].transform.rotation);
+          GameObject O4 = Instantiate(stays[0], new Vector3(0, 0, -16), Starters[num].transform.rotation);
+          GameObject O5 = Instantiate(stays[0], new Vector3(-16, 0, 16), Starters[num].transform.rotation);
+          GameObject O6 = Instantiate(stays[0], new Vector3(-16, 0, -16), Starters[num].transform.rotation);
+          GameObject O7 = Instantiate(stays[0], new Vector3(-16, 0, 0), Starters[num].transform.rotation);
+          */
 
 
 
@@ -55,17 +59,17 @@ public class Spawner : MonoBehaviour
         else if (num == 1)
         {
             g.transform.Rotate(Vector3.up, 90);
-            g.transform.Translate(new Vector3(-15 + Z, 0, 0 + X));
+            g.transform.Translate(new Vector3(-15 - Z, 0, 0 + X));
         }
         else if (num == 2)
         {
             g.transform.Rotate(Vector3.up, 180);
-            g.transform.Translate(new Vector3(-15, 0, -15));
+            g.transform.Translate(new Vector3(-15 - X, 0, -15 - Z));
         }
         else
         {
             g.transform.Rotate(Vector3.up, 270);
-            g.transform.Translate(new Vector3(0, 0, -15));
+            g.transform.Translate(new Vector3(0 + Z, 0, -15 - X));
        // g.transform.Position(new Vector3(15, 0, 0));
            // g.transform.SetPositionAndRotation(new Vector3(15, 0, 0), new Quaternion(0, 180, 0, 1));  
        }    
