@@ -16,28 +16,43 @@ public class Spawner : MonoBehaviour
         //int num = r.Next(0, 1);
         // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
 
-        int num = Random.Range(4, 5);
+        int num = Random.Range(0, 5);
         Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
-        //placeR(g);
+        placeR(g, 0, 0);
 
-          GameObject O = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        int yog = Random.Range(0, 2);
+
+          GameObject O = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
           placeR(O, 16, 0);
-
-        GameObject O1 = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        yog = Random.Range(0, 2);
+        GameObject O1 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O1, 16, 16);
-
-        GameObject O2 = Instantiate(stays[0], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        yog = Random.Range(0, 2);
+        GameObject O2 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O2, 16, -16);
+        yog = Random.Range(0, 2);
+        GameObject O3 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O3, 0, 16);
+        yog = Random.Range(0, 2);
+        GameObject O4 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O4, 0, -16);
+        yog = Random.Range(0, 2);
+        GameObject O5 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O5, -16, 16);
+        yog = Random.Range(0, 2);
+        GameObject O6 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O6, -16, 0);
+        yog = Random.Range(0, 2);
+        GameObject O7 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
+        placeR(O7, -16, -16);
 
-        /*  
+        
           
-          GameObject O3 = Instantiate(stays[0], new Vector3(0, 0, 16), Starters[num].transform.rotation);
-          GameObject O4 = Instantiate(stays[0], new Vector3(0, 0, -16), Starters[num].transform.rotation);
-          GameObject O5 = Instantiate(stays[0], new Vector3(-16, 0, 16), Starters[num].transform.rotation);
-          GameObject O6 = Instantiate(stays[0], new Vector3(-16, 0, -16), Starters[num].transform.rotation);
-          GameObject O7 = Instantiate(stays[0], new Vector3(-16, 0, 0), Starters[num].transform.rotation);
-          */
+          
+          
+          
+          
 
 
 
@@ -50,7 +65,7 @@ public class Spawner : MonoBehaviour
 
     private void placeR(GameObject g, int X, int Z)
     {
-        int num = Random.Range(0, 1);
+        int num = Random.Range(0, 4);
         if (num == 0)
         {
             g.transform.Translate(new Vector3(X, 0, Z));
