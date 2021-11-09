@@ -5,50 +5,132 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] Starters;
-    public GameObject[] stays;
+    
+    public GameObject[] downs;
+    public GameObject[] pass;
+    public GameObject[] stops;
+    private bool[] path = new bool[9];
+    private bool down = false;
+    private Vector3[] trans = new Vector3[9];
 
-    private int[] path1 = new int[9];
+    
+    
     
     // Start is called before the first frame update
     void Start()
     {
-        //Random r = new Random();
-        //int num = r.Next(0, 1);
-        // Instantiate(landFabs[0], new Vector3(0, 0, 0), landFabs[0].transform.rotation);
+        populatetrans();
 
-        int num = Random.Range(0, 5);
+
+
+
+
+
+
+
+        //Starting area
+        int n = Random.Range(0, 5);
+
+        GameObject g = Instantiate(Starters[n], new Vector3(0, 0, 0), Starters[n].transform.rotation);
+        placeR(g, 0, 0);
+
+        if (n > 1)
+        {
+            down = true;
+            path[0] = true;
+        }
+
+        //Where to go next
+        int spot = GetnextSpotFromStart();
+       
+       // for (int i = 0; i < 7; i++)
+        //{
+            if (down)
+            {
+                int type = Random.Range(0, 3);
+                if (type == 0)
+                {
+                    //how many downs there are is n
+                    n = Random.Range(0, 1);
+                    g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                }
+                else if (type == 1)
+                {
+                    //how many downs there are is n
+                    n = Random.Range(0, 1);
+                    g = Instantiate(pass[n], new Vector3(0, 0, 0), pass[n].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                }
+                else
+                {
+                    //how many downs there are is n
+                    n = Random.Range(0, 1);
+                    g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                }
+            //choose where to go now
+
+            int downnum = spot - 1;
+            if (downnum == 0)
+            {
+                downnum = 8;
+            }
+            int upnum = spot + 1;
+            if (upnum = 9)
+            {
+                upnum = 1;
+            }
+
+
+
+            }
+      //  }
+
+
+
+
+
+
+        
+        
+      
+        
+        
+        
+        /*  int num = Random.Range(0, 5);
         Vector3 position = Vector3.zero;
         GameObject g = Instantiate(Starters[num], position, Starters[num].transform.rotation);
         placeR(g, 0, 0);
 
-        int yog = Random.Range(0, 2);
+        int yog = Random.Range(0, 3);
 
           GameObject O = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
           placeR(O, 16, 0);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O1 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O1, 16, 16);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O2 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O2, 16, -16);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O3 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O3, 0, 16);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O4 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O4, 0, -16);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O5 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O5, -16, 16);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O6 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O6, -16, 0);
-        yog = Random.Range(0, 2);
+        yog = Random.Range(0, 3);
         GameObject O7 = Instantiate(stays[yog], new Vector3(0, 0, 0), Starters[num].transform.rotation);
         placeR(O7, -16, -16);
 
         
-          
+          */
           
           
           
@@ -63,7 +145,7 @@ public class Spawner : MonoBehaviour
 
     }
 
-    private void placeR(GameObject g, int X, int Z)
+    private void placeR(GameObject g, float X, float Z)
     {
         int num = Random.Range(0, 4);
         if (num == 0)
@@ -85,12 +167,56 @@ public class Spawner : MonoBehaviour
         {
             g.transform.Rotate(Vector3.up, 270);
             g.transform.Translate(new Vector3(0 + Z, 0, -15 - X));
-       // g.transform.Position(new Vector3(15, 0, 0));
-           // g.transform.SetPositionAndRotation(new Vector3(15, 0, 0), new Quaternion(0, 180, 0, 1));  
-       }    
-        
+        }    
+     }
 
 
+    private int GetnextSpotFromStart()
+    {
+        int n = Random.Range(0, 4);
+        int spot;
+        if (n == 0)
+        {
+            spot = 2;
+        }
+        else if (n == 1)
+        {
+            spot = 4;
+        }
+        else if (n == 2)
+        {
+            spot = 6;
+        }
+        else
+        {
+            spot = 8;
+        }
+        return 8; 
+    }
+
+
+    /*
+     1  16, 16
+    2   16, 0
+    3   16, -16
+    4   0, -16
+    5,  -16, -16
+    6, -16, 0
+    7,  -16, 16
+    8   0 16
+    */
+
+    private void populatetrans()
+    {
+        trans[0] = new Vector3(0, 0, 0);
+        trans[1] = new Vector3(16, 0, 16);
+        trans[2] = new Vector3(16, 0, 0);
+        trans[3] = new Vector3(16, 0, -16);
+        trans[4] = new Vector3(0, 0, -16);
+        trans[5] = new Vector3(-16, 0, -16);
+        trans[6] = new Vector3(-16, 0, 0);
+        trans[7] = new Vector3(-16, 0, 16);
+        trans[8] = new Vector3(0, 0, 16);
     }
 
     // Update is called once per frame
