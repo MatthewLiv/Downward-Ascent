@@ -39,55 +39,28 @@ public class Spawner : MonoBehaviour
             down = true;
             path[0] = true;
         }
-
+        
         //Where to go next
         int spot = GetnextSpotFromStart();
-       
+       if (down)
+        {
+            fill(spot);
+        }
        // for (int i = 0; i < 7; i++)
         //{
-            if (down)
-            {
-                int type = Random.Range(0, 3);
-                if (type == 0)
-                {
-                    //how many downs there are is n
-                    n = Random.Range(0, 1);
-                    g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
-                    placeR(g, trans[spot].x, trans[spot].z);
-                }
-                else if (type == 1)
-                {
-                    //how many downs there are is n
-                    n = Random.Range(0, 1);
-                    g = Instantiate(pass[n], new Vector3(0, 0, 0), pass[n].transform.rotation);
-                    placeR(g, trans[spot].x, trans[spot].z);
-                }
-                else
-                {
-                    //how many downs there are is n
-                    n = Random.Range(0, 1);
-                    g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
-                    placeR(g, trans[spot].x, trans[spot].z);
-                }
+           // if (down)
+            //{
+                
             //choose where to go now
 
-            int downnum = spot - 1;
-            if (downnum == 0)
-            {
-                downnum = 8;
-            }
-            int upnum = spot + 1;
-            if (upnum = 9)
-            {
-                upnum = 1;
-            }
+          
+            
 
 
-
-            }
+    }
       //  }
 
-
+        
 
 
 
@@ -143,7 +116,7 @@ public class Spawner : MonoBehaviour
 
 
 
-    }
+    
 
     private void placeR(GameObject g, float X, float Z)
     {
@@ -218,6 +191,55 @@ public class Spawner : MonoBehaviour
         trans[7] = new Vector3(-16, 0, 16);
         trans[8] = new Vector3(0, 0, 16);
     }
+
+    private void fill(int spot)
+    {
+        path[spot] = true;
+        int type = Random.Range(0, 3);
+        int n;
+        GameObject g;
+        if (type == 0)
+        {
+            //how many downs there are is n
+            n = Random.Range(0, 1);
+            g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+        }
+        else if (type == 1)
+        {
+            //how many downs there are is n
+            n = Random.Range(0, 1);
+            g = Instantiate(pass[n], new Vector3(0, 0, 0), pass[n].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+        }
+        else
+        {
+            //how many downs there are is n
+            n = Random.Range(0, 1);
+            g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+        }
+
+        int leftnum = spot - 1;
+        if (leftnum == 0)
+        {
+            leftnum = 8;
+        }
+        if (!path[leftnum])
+        {
+            fill(leftnum);
+        }
+
+        int rightnum = spot + 1;
+        if (rightnum == 9)
+        {
+            rightnum = 1;
+        }
+        if (!path[rightnum])
+        {
+            fill(rightnum);
+        }
+}
 
     // Update is called once per frame
     void Update()
