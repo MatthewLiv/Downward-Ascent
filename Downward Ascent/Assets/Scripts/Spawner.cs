@@ -29,23 +29,44 @@ public class Spawner : MonoBehaviour
 
 
         //Starting area
-        int n = Random.Range(0, 5);
+        int n = Random.Range(0, 2);
 
         GameObject g = Instantiate(Starters[n], new Vector3(0, 0, 0), Starters[n].transform.rotation);
         placeR(g, 0, 0);
-
-        if (n > 1)
+        int spot = GetnextSpotFromStart();
+        if (n < 2)
         {
             down = true;
             path[0] = true;
+            fill(spot);
+        }
+
+
+        else
+        {
+            int i = 0;
+            while(!down && i < 7)
+            {
+                int r = Random.Range(0, 8);
+                i++;
+                if (r == 0)
+                {
+                    down = true;
+                    g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    path[spot] = true;
+                    fill(spot + 1);
+                    fill(spot - 1);
+                }
+            }
         }
         
         //Where to go next
-        int spot = GetnextSpotFromStart();
-       if (down)
+        
+       /*if (down)
         {
             fill(spot);
-        }
+        }*/
        // for (int i = 0; i < 7; i++)
         //{
            // if (down)
@@ -167,6 +188,11 @@ public class Spawner : MonoBehaviour
         return 8; 
     }
 
+    public int GetNextSpotFromSide()
+    {
+        return 0;
+    }
+
 
     /*
      1  16, 16
@@ -181,6 +207,7 @@ public class Spawner : MonoBehaviour
 
     private void populatetrans()
     {
+
         trans[0] = new Vector3(0, 0, 0);
         trans[1] = new Vector3(16, 0, 16);
         trans[2] = new Vector3(16, 0, 0);
@@ -194,6 +221,17 @@ public class Spawner : MonoBehaviour
 
     private void fill(int spot)
     {
+
+        if (spot < 0 || spot > 9)
+        {
+            return;
+        }
+        
+
+
+
+
+
         path[spot] = true;
         int type = Random.Range(0, 3);
         int n;
