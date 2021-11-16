@@ -23,9 +23,12 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         populatetrans();
-
+        level = 0;
         int nextspot = SpawnTop();
+        resetThem();
         level = -16;
+        fill();
+        
 
           
             
@@ -33,11 +36,24 @@ public class Spawner : MonoBehaviour
 
     }
       
+    private void resetThem()
+    {
+        path = new bool[9];
+        down = false;
 
+    }
         
 
 
-
+    private int getDirection()
+    {
+        int n = Random.Range(0, 2);
+        if (n == 0)
+        {
+            return 1;
+        }
+        return -1;
+    }
 
         
         
@@ -77,15 +93,16 @@ public class Spawner : MonoBehaviour
         GameObject g = Instantiate(Starters[n], new Vector3(0, 0, 0), Starters[n].transform.rotation);
         placeR(g, 0, 0);
         int spot = GetnextSpotFromStart();
+        path[0] = true;
         if (n > 1)
         {
             down = true;
-            path[0] = true;
+            
             //fill(spot);
             fill();
         }
 
-
+        
         else
         {
             int i = 0;
@@ -123,16 +140,29 @@ public class Spawner : MonoBehaviour
         return spot;
     }
 
-   /* private void SpawnMid(int spot)
+    private void SpawnMid(int spot)
     {
-        fillcount = 0;
+        int i = 0;
+        path[spot] = true;
+        int d = getDirection();
+        while (!down && if < 8)
+        {
+                int r = Random.Range(0, 9);
+                if (spot == 0)
+                {
+                    if (r == 0)
+                    {
+                        GameObject g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
+                        placeR(g, 0, 0);
+                    }
+                }
+        }
+        
+            
     }
 
-    private void fillAllover()
-    {
-
-    }
-   */
+    
+   
 
 
     
@@ -142,23 +172,23 @@ public class Spawner : MonoBehaviour
         int num = Random.Range(0, 4);
         if (num == 0)
         {
-            g.transform.Translate(new Vector3(X, 0, Z));
+            g.transform.Translate(new Vector3(X, level, Z));
             
         }
         else if (num == 1)
         {
             g.transform.Rotate(Vector3.up, 90);
-            g.transform.Translate(new Vector3(-15 - Z, 0, 0 + X));
+            g.transform.Translate(new Vector3(-15 - Z, level, 0 + X));
         }
         else if (num == 2)
         {
             g.transform.Rotate(Vector3.up, 180);
-            g.transform.Translate(new Vector3(-15 - X, 0, -15 - Z));
+            g.transform.Translate(new Vector3(-15 - X, level, -15 - Z));
         }
         else
         {
             g.transform.Rotate(Vector3.up, 270);
-            g.transform.Translate(new Vector3(0 + Z, 0, -15 - X));
+            g.transform.Translate(new Vector3(0 + Z, level, -15 - X));
         }    
      }
 
