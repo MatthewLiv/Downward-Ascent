@@ -143,19 +143,30 @@ public class Spawner : MonoBehaviour
     private void SpawnMid(int spot)
     {
         int i = 0;
-        path[spot] = true;
+        
         int d = getDirection();
-        while (!down && if < 8)
+        while (!down && i < 8)
         {
+                path[spot] = true;
                 int r = Random.Range(0, 9);
                 if (spot == 0)
                 {
+                //change direction since its back in the middle
+                d = getDirection();
+                    //go down then make down true so the rest fills. 
                     if (r == 0)
                     {
-                        GameObject g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
+                        GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                        placeR(g, 0, 0);
+                        down = true;
+                    }
+                    else
+                    {
+                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
                         placeR(g, 0, 0);
                     }
                 }
+            i++;
         }
         
             
@@ -209,7 +220,27 @@ public class Spawner : MonoBehaviour
 
     private int GetnextSpotFromStart()
     {
-        int n = Random.Range(0, 4);
+        ArrayList a = new ArrayList();
+        int size = 0;
+        for (int i = 2; i <= 8; i += 2)
+        {
+            if (!path[i])
+            {
+                a.Add(i);
+                size++;
+            }
+        }
+
+        int n = Random.Range(0, size);
+
+        for (; size > 0; size--)
+        {
+
+        }
+
+
+
+       /* int n = Random.Range(0, 4);
         int spot;
         if (n == 0)
         {
@@ -227,7 +258,7 @@ public class Spawner : MonoBehaviour
         {
             spot = 8;
         }
-        return 8; 
+        return 8;*/ 
     }
 
     public int GetNextSpotFromSide()
