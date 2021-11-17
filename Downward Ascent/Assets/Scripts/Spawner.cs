@@ -220,23 +220,28 @@ public class Spawner : MonoBehaviour
 
     private int GetnextSpotFromStart()
     {
-        ArrayList a = new ArrayList();
-        int size = 0;
+        bool go = false;
         for (int i = 2; i <= 8; i += 2)
         {
             if (!path[i])
             {
-                a.Add(i);
-                size++;
+                go = true;
+            }
+
+        }
+
+        if (go)
+        {
+            while (true)
+            {
+                int n = Random.Range(1, 5) * 2;
+                if (!path[n])
+                {
+                    return n;
+                }
             }
         }
-
-        int n = Random.Range(0, size);
-
-        for (; size > 0; size--)
-        {
-
-        }
+        return -1;
 
 
 
