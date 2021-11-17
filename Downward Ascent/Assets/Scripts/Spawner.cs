@@ -162,10 +162,51 @@ public class Spawner : MonoBehaviour
                     }
                     else
                     {
-                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
-                        placeR(g, 0, 0);
+                        spot = GetnextSpotFromStart();
+                        if (spot == -1)
+                        {
+                            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                            placeR(g, 0, 0);
+                            down = true;
+                        }
+                        else
+                        {
+                            
+                            GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                            placeR(g, 0, 0);
+                        }  
                     }
                 }
+
+                else
+                {
+                    if (r == 0)
+                    {
+                        GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                        placeR(g, 0, 0);
+                        down = true;
+
+                    }
+
+                    else
+                    {
+                        int newspot = UpdateSpot(spot);
+                        int ran = Random.Range(0, 9);
+                        if (ran == 0 && spot % 2 == 0)
+                        {
+                            newspot = 0;
+                        }
+                        if (path[newspot])
+                        {
+                            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                            placeR(g, 0, 0);
+                            down = true;
+                        }
+                    }
+                }
+
+
+
             i++;
         }
         
