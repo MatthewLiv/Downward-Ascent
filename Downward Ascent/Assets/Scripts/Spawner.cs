@@ -23,11 +23,12 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         populatetrans();
-        level = 0;
-        int nextspot = SpawnTop();
+        //level = 0;
+        //int nextspot = SpawnTop();
+        ChangeDirection();
         resetThem();
         level = -16;
-        fill();
+        SpawnMid(1, 0);
         
 
           
@@ -45,14 +46,14 @@ public class Spawner : MonoBehaviour
         
 
 
-    private int getDirection()
+    private void ChangeDirection()
     {
         int n = Random.Range(0, 2);
         if (n == 0)
         {
-            return 1;
+            direction = 1;
         }
-        return -1;
+        direction = -1;
     }
 
         
@@ -140,7 +141,7 @@ public class Spawner : MonoBehaviour
         return spot;
     }
 
-    private void SpawnMid(int spot)
+    /*private int SpawnMid(int spot)
     {
         int i = 0;
         
@@ -149,12 +150,21 @@ public class Spawner : MonoBehaviour
         {
                 path[spot] = true;
                 int r = Random.Range(0, 9);
-                if (spot == 0)
-                {
+            if (spot == 0)
+            {
                 //change direction since its back in the middle
                 d = getDirection();
-                    //go down then make down true so the rest fills. 
-                    if (r == 0)
+                //go down then make down true so the rest fills. 
+                if (r == 0)
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, 0, 0);
+                    down = true;
+                }
+                else
+                {
+                    spot = GetnextSpotFromStart();
+                    if (spot == -1)
                     {
                         GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
                         placeR(g, 0, 0);
@@ -162,62 +172,276 @@ public class Spawner : MonoBehaviour
                     }
                     else
                     {
-                        spot = GetnextSpotFromStart();
-                        if (spot == -1)
-                        {
-                            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
-                            placeR(g, 0, 0);
-                            down = true;
-                        }
-                        else
-                        {
-                            
-                            GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
-                            placeR(g, 0, 0);
-                        }  
+
+                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                        placeR(g, 0, 0);
                     }
+                }
+            }
+
+            else
+            {
+                if (r == 0)
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    down = true;
+
                 }
 
                 else
                 {
-                    if (r == 0)
+                    int newspot = UpdateSpot(spot);
+                    int ran = Random.Range(0, 9);
+                    int ran2 = Random.Range(0, 18);
+                    if (ran == 0 && spot % 2 == 0)
+                    {
+                        newspot = 0;
+                    }
+                    if (path[newspot] || ran2 == 0)
+                    {
+                        GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                        placeR(g, trans[spot].x, trans[spot].z);
+                        down = true;
+                    }
+                    else
+                    {
+                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                        placeR(g, trans[spot].x, trans[spot].z);
+
+                    }
+
+                    spot = newspot;
+
+
+
+                }
+
+            }
+
+            i++;
+        }
+
+
+
+        if (down)
+        {
+            fill();
+        }
+
+        else
+        {
+            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+            path[spot] = true;
+        }
+
+        return spot;
+        
+            
+    }*/
+
+    private int SpawnMid(int spot, int i)
+    {
+        //if weve gone through everything else
+        if (i == 8)
+        {
+            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+            path[spot] = true;
+            return spot;
+        }
+        // if this spot is randomly chosen to go down
+        int r = Random.Range(0, 9);
+        if (r == 0)
+        {
+            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+            path[spot] = true;
+            fill();
+            return spot;
+        }
+
+        else
+        {
+           
+            
+            // figure out where to go next
+            //if we are in the middle
+            if (spot == 0)
+            {
+                int nextspot = GetnextSpotFromStart();
+                //if there is nowhere to go go down
+                if (nextspot == -1)
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    path[spot] = true;
+                    fill();
+                    return spot;
+                }
+                else
+                {
+                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    path[spot] = true;
+                    ChangeDirection();
+                    return SpawnMid(nextspot, i++);
+                }
+            }
+            //if we or in the middle side
+            //else if (spot % 2 == 0)
+            else
+            {
+                int newspot;
+                if (spot % 2 == 0)
+                {
+                    newspot = UpdateSpotMid(spot);
+                }
+                else
+                {
+                    newspot = UpdateSpot(spot);
+                }
+                
+                
+                //if something is already there then go down
+                if (path[newspot])
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    path[spot] = true;
+                    fill();
+                    return spot;
+                }
+                // pass and keep going yall
+                else
+                {
+                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    path[spot] = true;
+                    //Debug.Log(newspot + "   " + spot);
+                    return SpawnMid(newspot, i++);
+                }
+                
+
+            }
+            
+
+
+        }
+       
+
+
+    }
+
+
+
+  /*  private int SpawnMid(int spot)
+    {
+        int i = 0;
+
+        int d = getDirection();
+        while (!down && i < 8)
+        {
+            path[spot] = true;
+            int r = Random.Range(0, 9);
+            if (spot == 0)
+            {
+                //change direction since its back in the middle
+                d = getDirection();
+                //go down then make down true so the rest fills. 
+                if (r == 0)
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, 0, 0);
+                    down = true;
+                }
+                else
+                {
+                    spot = GetnextSpotFromStart();
+                    if (spot == -1)
                     {
                         GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
                         placeR(g, 0, 0);
                         down = true;
-
                     }
-
                     else
                     {
-                        int newspot = UpdateSpot(spot);
-                        int ran = Random.Range(0, 9);
-                        if (ran == 0 && spot % 2 == 0)
-                        {
-                            newspot = 0;
-                        }
-                        if (path[newspot])
-                        {
-                            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
-                            placeR(g, 0, 0);
-                            down = true;
-                        }
+
+                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                        placeR(g, 0, 0);
                     }
                 }
+            }
+
+            else
+            {
+                if (r == 0)
+                {
+                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    placeR(g, trans[spot].x, trans[spot].z);
+                    down = true;
+
+                }
+
+                else
+                {
+                    int newspot = UpdateSpot(spot);
+                    int ran = Random.Range(0, 9);
+                    
+                    if (ran == 0 && spot % 2 == 0)
+                    {
+                        newspot = 0;
+                    }
+                    if (path[newspot])
+                    {
+                        GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                        placeR(g, trans[spot].x, trans[spot].z);
+                        down = true;
+                    }
+                    else
+                    {
+                        GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                        placeR(g, trans[spot].x, trans[spot].z);
+
+                    }
+
+                    spot = newspot;
 
 
+
+                }
+
+            }
 
             i++;
         }
-        
-            
-    }
-
-    
-   
 
 
-    
+
+        if (down)
+        {
+            fill();
+        }
+
+        else
+        {
+            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            placeR(g, trans[spot].x, trans[spot].z);
+            path[spot] = true;
+        }
+
+        return spot;
+
+
+    }*/
+
+
+
+
+
+
+
 
     private void placeR(GameObject g, float X, float Z)
     {
@@ -244,8 +468,27 @@ public class Spawner : MonoBehaviour
         }    
      }
 
+    private int UpdateSpotMid(int spot)
+    {
+        if (Random.Range(0, 9) == 0)
+        {
+            return 0;
+        }
+        spot += direction;
+        if (spot == 9)
+        {
+            return 1;
+        }
+        if (spot == 0)
+        {
+            return 8;
+        }
+        return spot;
+    }
+
     private int UpdateSpot(int spot)
     {
+        
         spot += direction;
         if (spot == 9)
         {
@@ -414,7 +657,7 @@ public class Spawner : MonoBehaviour
 
     private GameObject GetanySpace()
     {
-        int type = Random.Range(0, 3);
+       /* int type = Random.Range(0, 3);
         int n;
         GameObject g;
         if (type == 0)
@@ -432,12 +675,12 @@ public class Spawner : MonoBehaviour
             return g;
         }
         else
-        {
+        {*/
             //how many downs there are is n
-            n = Random.Range(0, 1);
-            g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
+           int n = Random.Range(0, 1);
+            GameObject g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
             return g;
-        }
+        //}
     }
 
     // Update is called once per frame
