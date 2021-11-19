@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestMoveView : MonoBehaviour
+public class Mover : MonoBehaviour
 {
     public float horizontalInput;
     public float verticalInput;
@@ -16,10 +16,6 @@ public class TestMoveView : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-
-        transform.Rotate(Vector3.up, turnSpeed * horizontalInput * Time.deltaTime);
-        transform.Rotate(Vector3.right, -turnSpeed * verticalInput * Time.deltaTime);
+        
     }
 }

@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour
     void Start()
     {
         populatetrans();
-        /*level = 0;
+        level = 0;
         int nextspot = SpawnTop();
         ChangeDirection();
         resetThem();
@@ -33,11 +33,11 @@ public class Spawner : MonoBehaviour
         ChangeDirection();
         resetThem();
         level = -32;
-        nextspot = SpawnMid(nextspot, 0);*/
+        nextspot = SpawnMid(nextspot, 0);
         ChangeDirection();
         resetThem();
         level = -48;
-        SpawnBott(0, 0);
+        SpawnBott(nextspot, 0);
 
 
 
@@ -108,7 +108,7 @@ public class Spawner : MonoBehaviour
             down = true;
             
             //fill(spot);
-            fill();
+            fill(false);
         }
 
         
@@ -127,7 +127,7 @@ public class Spawner : MonoBehaviour
                     path[spot] = true;
                     //fill(spot + 1);
                     //fill(spot - 1);
-                    fill();
+                    fill(false);
                 }
                 else
                 {
@@ -168,7 +168,7 @@ public class Spawner : MonoBehaviour
             GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
-            fill();
+            fill(false);
             return spot;
         }
 
@@ -187,7 +187,7 @@ public class Spawner : MonoBehaviour
                     GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
-                    fill();
+                    fill(false);
                     return spot;
                 }
                 else
@@ -220,7 +220,7 @@ public class Spawner : MonoBehaviour
                     GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
-                    fill();
+                    fill(false);
                     return spot;
                 }
                 // pass and keep going yall
@@ -248,7 +248,7 @@ public class Spawner : MonoBehaviour
 
     private int SpawnBott(int spot, int i)
     {
-        /*
+        
         //if weve gone through everything else
         if (i == 8)
         {
@@ -264,7 +264,7 @@ public class Spawner : MonoBehaviour
             GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
-            fill();
+            fill(true);
             return spot;
         }
 
@@ -283,7 +283,7 @@ public class Spawner : MonoBehaviour
                     GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
-                    fill();
+                    fill(true);
                     return spot;
                 }
                 else
@@ -292,7 +292,7 @@ public class Spawner : MonoBehaviour
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     ChangeDirection();
-                    return SpawnMid(nextspot, i++);
+                    return SpawnBott(nextspot, i++);
                 }
             }
             //if we or in the middle side
@@ -316,7 +316,7 @@ public class Spawner : MonoBehaviour
                     GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
-                    fill();
+                    fill(true);
                     return spot;
                 }
                 // pass and keep going yall
@@ -326,7 +326,7 @@ public class Spawner : MonoBehaviour
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     //Debug.Log(newspot + "   " + spot);
-                    return SpawnMid(newspot, i++);
+                    return SpawnBott(newspot, i++);
                 }
 
 
@@ -334,11 +334,9 @@ public class Spawner : MonoBehaviour
 
 
 
-        }*/
+        }
 
-        GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
-        placeR(g, trans[spot].x, trans[spot].z);
-        return 2;
+        
 
     }
 
@@ -489,26 +487,26 @@ public class Spawner : MonoBehaviour
 
    
 
-    private void fill()
+    private void fill(bool b)
     {
         for (int i = 0; i < 9; i++)
         {
             if (!path[i])
             {
                 path[i] = true;
-                GameObject g = GetanySpace();
+                GameObject g = GetanySpace(b);
                 placeR(g, trans[i].x, trans[i].z);
 
             }
         }
     }
 
-    private GameObject GetanySpace()
+    private GameObject GetanySpace(bool b)
     {
-       /* int type = Random.Range(0, 3);
+        int type = Random.Range(0, 5);
         int n;
         GameObject g;
-        if (type == 0)
+        if (type == 0 && !b)
         {
             //how many downs there are is n
             n = Random.Range(0, 1);
@@ -523,12 +521,12 @@ public class Spawner : MonoBehaviour
             return g;
         }
         else
-        {*/
+        {
             //how many downs there are is n
-           int n = Random.Range(0, 1);
-            GameObject g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
+            n = Random.Range(0, 1);
+            g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
             return g;
-        //}
+       }
     }
 
     // Update is called once per frame
