@@ -24,15 +24,15 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         yaw += speedH * Input.GetAxis("Mouse X");
+        /* yaw += speedH * Input.GetAxis("Mouse X");
          pitch -= speedV * Input.GetAxis("Mouse Y");
 
          transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
+        */
         
         Vec = transform.localPosition;
-        Vec.x = Vec.x + Input.GetAxis("Mouse X") * Time.deltaTime * 20;
-        Vec.z = Vec.z + Input.GetAxis("Mouse Y") * Time.deltaTime * 20;
+        Vec.x = Vec.x + Input.GetAxis("Horizontal") * Time.deltaTime * 20;
+        Vec.z = Vec.z + Input.GetAxis("Vertical") * Time.deltaTime * 20;
         transform.localPosition = Vec;
 
 
