@@ -25,29 +25,42 @@ public class Look : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int Xax = Input.GetAxis("MouseX");
-        if (Xax > 180 || Xax < -180)
+        /*  int Xax = (int) Input.GetAxis("Mouse X");
+          if (Xax > 180 || Xax < -180)
+          {
+              yaw = 0;
+          }
+          else
+          {
+              yaw += speedH * Xax;
+          }
+
+          int Yax = (int) Input.GetAxis("Mouse Y");
+          if (Yax > 180 || Yax < -180)
+          {
+              pitch = 0;
+          }
+          else
+          {
+              pitch -= speedH * Yax;
+          }
+
+          transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
+        */
+
+        yaw += speedH * Input.GetAxis("Mouse X");
+        pitch -= speedV * Input.GetAxis("Mouse Y");
+
+        if (transform.rotation.x > 0.5 || transform.rotation.x < 0.5)
         {
             yaw = 0;
-        }
-        else
-        {
-            yaw += speedH * Xax;
+            Debug.Log("It goes to show");
         }
 
-        int Yax = Input.GetAxis("MouseY");
-        if (Yax > 180 || Yax < -180)
-        {
-            pitch = 0;
-        }
-        else
-        {
-            pitch -=peedH * Xax;
-        }
+        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
 
-
-
-
+        //0.09864876
+        //Debug.Log(transform.rotation.x);
         /*
         yaw += speedH * Input.GetAxis("MouseX");
          pitch -= speedV * Input.GetAxis("Mouse Y");
@@ -82,7 +95,7 @@ public class Look : MonoBehaviour
             isJump = false;
         }
         
-
+        
         
 
        
