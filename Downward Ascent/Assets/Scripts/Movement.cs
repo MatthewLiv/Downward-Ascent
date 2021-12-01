@@ -32,6 +32,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        
 
         if (isGrounded && velocity.y < 0)
         {
@@ -46,7 +47,7 @@ public class Movement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
 
-
+        Debug.Log(velocity);
         controller.Move(velocity * Time.deltaTime);
 
 
