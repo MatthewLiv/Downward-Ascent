@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         
 
         if (isGrounded && velocity.y < 0)
@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpheight * -2f * gravity);
         }
 
-        Debug.Log(velocity);
+        
         controller.Move(velocity * Time.deltaTime);
 
 
