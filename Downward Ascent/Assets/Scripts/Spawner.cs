@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public GameObject[] pass;
     public GameObject[] stops;
     public GameObject[] ends;
+    public GameObject Person;
     private bool[] path = new bool[9];
     private bool down = false;
     private Vector3[] trans = new Vector3[9];
@@ -39,7 +40,9 @@ public class Spawner : MonoBehaviour
         level = -48;
         SpawnBott(nextspot, 0);
 
+        //create player
 
+        Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
 
 
 

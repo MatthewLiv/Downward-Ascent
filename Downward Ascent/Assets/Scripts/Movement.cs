@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
     public float gravity = -9.8f;
 
-    public float jumpheight = 2f;
+    public float jumpheight = 8f;
 
     // Start is called before the first frame update
     void Start()
