@@ -3,7 +3,7 @@
 // CHANGES || version VERSION
 //
 // "Enable/Disable Headbob, Changed look rotations - should result in reduced camera jitters" || version 1.0.1
-
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -740,3 +740,4 @@ public class MyControl : MonoBehaviour
 }
 
 #endif
+*/
