@@ -251,11 +251,11 @@ public class Spawner : MonoBehaviour
 
     private int SpawnBott(int spot, int i)
     {
-        
+        int EndNum = Random.Range(0, 3);
         //if weve gone through everything else
         if (i == 8)
         {
-            GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
+            GameObject g = Instantiate(ends[EndNum], new Vector3(0, 0, 0), ends[EndNum].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
             return spot;
@@ -264,7 +264,7 @@ public class Spawner : MonoBehaviour
         int r = Random.Range(0, 9);
         if (r == 0)
         {
-            GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
+            GameObject g = Instantiate(ends[EndNum], new Vector3(0, 0, 0), ends[EndNum].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
             fill(true);
@@ -283,7 +283,7 @@ public class Spawner : MonoBehaviour
                 //if there is nowhere to go go down
                 if (nextspot == -1)
                 {
-                    GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
+                    GameObject g = Instantiate(ends[EndNum], new Vector3(0, 0, 0), ends[EndNum].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     fill(true);
@@ -316,7 +316,7 @@ public class Spawner : MonoBehaviour
                 //if something is already there then go down
                 if (path[newspot])
                 {
-                    GameObject g = Instantiate(ends[0], new Vector3(0, 0, 0), ends[0].transform.rotation);
+                    GameObject g = Instantiate(ends[EndNum], new Vector3(0, 0, 0), ends[EndNum].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     fill(true);
