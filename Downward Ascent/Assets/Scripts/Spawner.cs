@@ -535,6 +535,24 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (checkEnd())
+        {
+            var objects = GameObject.FindObjectsOfType(GameObject);
+            for (o GameObject in objects)
+            {
+                Destroy(o.gameObject);
+            }
+        }
+       
+    }
+
+    public bool checkEnd()
+    {
+        if (Physics.Raycast(origin, direction, out RaycastHit end, distance))
+        {
+            return true;
+        }
+        return false;
     }
 }

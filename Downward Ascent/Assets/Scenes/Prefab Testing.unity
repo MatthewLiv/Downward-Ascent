@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,9 +258,9 @@ MonoBehaviour:
   stops:
   - {fileID: 1751197760115959432, guid: c124a45859350274cbc23cb916491c02, type: 3}
   ends:
-  - {fileID: 9079333947260142219, guid: db275bad56f51e44a98a92e6bfaa8563, type: 3}
-  - {fileID: 4185896489188676771, guid: d5f3d7d5a142a384184d3fc976d60bdd, type: 3}
-  - {fileID: 890331156738684812, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
+  - {fileID: 7837143837587819231, guid: db275bad56f51e44a98a92e6bfaa8563, type: 3}
+  - {fileID: 2421146473738190365, guid: d5f3d7d5a142a384184d3fc976d60bdd, type: 3}
+  - {fileID: 3736579154689538079, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
   Person: {fileID: 3707863064238711054, guid: 4012e62ba4cbbc14d8a3ad7cb4670421, type: 3}
 --- !u!4 &1858746766
 Transform:
