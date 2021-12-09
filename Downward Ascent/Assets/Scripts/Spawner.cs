@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
     private int direction;
     private int level;
     private int fillcount;
+    
 
     
     
@@ -538,17 +539,21 @@ public class Spawner : MonoBehaviour
 
         if (checkEnd())
         {
-            var objects = GameObject.FindObjectsOfType(GameObject);
-            for (o GameObject in objects)
+            /*var objects = GameObject.FindObjectsOfType(GameObject);
+            foreach (o GameObject in objects)
             {
                 Destroy(o.gameObject);
-            }
+            }*/
+           // Debug.Log("Go BOOM");
         }
        
     }
 
     public bool checkEnd()
     {
+        Vector3 origin = new Vector3(Person.transform.position.x, Person.transform.position.y - (Person.transform.localScale.y * .5f), Person.transform.position.z);
+        Vector3 direction = Person.transform.TransformDirection(Vector3.down);
+        float distance = .75f;
         if (Physics.Raycast(origin, direction, out RaycastHit end, distance))
         {
             return true;
