@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Destruction test.unity
+    guid: b9833b93ccc2e5f48875cf4f6ad9d0ec
+  - enabled: 1
+    path: Assets/Scenes/The changer test.unity
+    guid: f5532a6278d652348acfead4efd66322
+  - enabled: 1
+    path: Assets/Scenes/Empty.unity
+    guid: 945376f0810e6ab4f981b298c01076b3
+  - enabled: 1
+    path: Assets/Scenes/Prefab Testing.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

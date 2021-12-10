@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Spawner : MonoBehaviour
 {
@@ -537,27 +538,24 @@ public class Spawner : MonoBehaviour
     void Update()
     {
 
-        if (checkEnd())
+        RaycastHit hit;
+        Ray landingRay = new Ray(Person.transform.position, Vector3.down);
+
+        if (Physics.Raycast(landingRay, out hit, 2))
         {
-            /*var objects = GameObject.FindObjectsOfType(GameObject);
-            foreach (o GameObject in objects)
+            if (hit.collider.tag == "End")
             {
-                Destroy(o.gameObject);
-            }*/
-           // Debug.Log("Go BOOM");
+                //SceneManager.UnloadSceneAsync(0);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                //SceneManager.LoadScene(1);
+
+            }
+
         }
-       
+
+
+
     }
 
-    public bool checkEnd()
-    {
-        Vector3 origin = new Vector3(Person.transform.position.x, Person.transform.position.y - (Person.transform.localScale.y * .5f), Person.transform.position.z);
-        Vector3 direction = Person.transform.TransformDirection(Vector3.down);
-        float distance = .75f;
-        if (Physics.Raycast(origin, direction, out RaycastHit end, distance))
-        {
-            return true;
-        }
-        return false;
-    }
+   
 }
