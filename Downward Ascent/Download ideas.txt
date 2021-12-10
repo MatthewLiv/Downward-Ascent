@@ -1,0 +1,15 @@
+Enemies:
+Zombie: https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
+
+wolf: https://assetstore.unity.com/packages/3d/characters/animals/mammals/casual-rpg-monster-wolf-208130
+
+skeleton: https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy-monster-skeleton-35635
+
+skeleton 2 : https://assetstore.unity.com/packages/3d/characters/creatures/dungeon-skeletons-demo-71087
+
+viking warrior: https://assetstore.unity.com/packages/3d/characters/humanoids/barbarian-warrior-75519
+
+
+
+Weapons:
+Guns: https://assetstore.unity.com/packages/3d/props/guns/guns-pack-low-poly-guns-collection-192553
