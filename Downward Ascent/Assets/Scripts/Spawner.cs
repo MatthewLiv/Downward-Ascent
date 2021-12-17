@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     public GameObject[] stops;
     public GameObject[] ends;
     public GameObject Person;
+    public GameObject EndScreen;
     private bool[] path = new bool[9];
     private bool down = false;
     private Vector3[] trans = new Vector3[9];
@@ -540,20 +541,32 @@ public class Spawner : MonoBehaviour
 
         RaycastHit hit;
         Ray landingRay = new Ray(Person.transform.position, Vector3.down);
+        bool done = false;
+        bool space = true;
 
         if (Physics.Raycast(landingRay, out hit, 2))
         {
-            if (hit.collider.tag == "End")
+            if (hit.collider.tag == "End" && !done && space)
             {
                 //SceneManager.UnloadSceneAsync(0);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+                done = true;
+                space = false;
                 //SceneManager.LoadScene(1);
 
             }
 
         }
 
+        
+        if (done)
+        {
+            if (Input.GetKeyDown("space"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }    
 
+        }
 
     }
 

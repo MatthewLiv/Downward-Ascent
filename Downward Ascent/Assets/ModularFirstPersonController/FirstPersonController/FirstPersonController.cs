@@ -557,7 +557,7 @@ public class FirstPersonController : MonoBehaviour
         GUILayout.Label("version 1.0.1", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Normal, fontSize = 12 });
         EditorGUILayout.Space();
 
-        #region Camera Setup
+#region Camera Setup
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         GUILayout.Label("Camera Setup", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
@@ -594,7 +594,7 @@ public class FirstPersonController : MonoBehaviour
 
         EditorGUILayout.Space();
 
-        #region Camera Zoom Setup
+#region Camera Zoom Setup
 
         GUILayout.Label("Zoom", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
 
@@ -607,11 +607,11 @@ public class FirstPersonController : MonoBehaviour
         fpc.zoomStepTime = EditorGUILayout.Slider(new GUIContent("Step Time", "Determines how fast the FOV transitions while zooming in."), fpc.zoomStepTime, .1f, 10f);
         GUI.enabled = true;
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Movement Setup
+#region Movement Setup
 
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         GUILayout.Label("Movement Setup", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
@@ -625,7 +625,7 @@ public class FirstPersonController : MonoBehaviour
 
         EditorGUILayout.Space();
 
-        #region Sprint
+#region Sprint
 
         GUILayout.Label("Sprint", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
 
@@ -679,9 +679,9 @@ public class FirstPersonController : MonoBehaviour
 
         EditorGUILayout.Space();
 
-        #endregion
+#endregion
 
-        #region Jump
+#region Jump
 
         GUILayout.Label("Jump", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
 
@@ -694,9 +694,9 @@ public class FirstPersonController : MonoBehaviour
 
         EditorGUILayout.Space();
 
-        #endregion
+#endregion
 
-        #region Crouch
+#region Crouch
 
         GUILayout.Label("Crouch", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
 
@@ -709,11 +709,11 @@ public class FirstPersonController : MonoBehaviour
         fpc.speedReduction = EditorGUILayout.Slider(new GUIContent("Speed Reduction", "Determines the percent 'Walk Speed' is reduced by. 1 being no reduction, and .5 being half."), fpc.speedReduction, .1f, 1);
         GUI.enabled = true;
 
-        #endregion
+#endregion
 
-        #endregion
+#endregion
 
-        #region Head Bob
+#region Head Bob
 
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
@@ -729,7 +729,7 @@ public class FirstPersonController : MonoBehaviour
         fpc.bobAmount = EditorGUILayout.Vector3Field(new GUIContent("Bob Amount", "Determines the amount the joint moves in both directions on every axes."), fpc.bobAmount);
         GUI.enabled = true;
 
-        #endregion
+#endregion
 
         //Sets any changes from the prefab
         if(GUI.changed)
@@ -743,3 +743,4 @@ public class FirstPersonController : MonoBehaviour
 }
 
 #endif
+
