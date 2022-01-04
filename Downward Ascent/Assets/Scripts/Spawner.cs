@@ -19,11 +19,13 @@ public class Spawner : MonoBehaviour
     private int direction;
     private int level;
     private int fillcount;
-    
+    private bool keepGoing;
+    private bool done = false;
 
-    
-    
-    
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class Spawner : MonoBehaviour
         //create player
 
         Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
-
+        keepGoing = true;
 
 
     }
@@ -541,32 +543,45 @@ public class Spawner : MonoBehaviour
 
         RaycastHit hit;
         Ray landingRay = new Ray(Person.transform.position, Vector3.down);
-        bool done = false;
-        bool space = true;
+        
+        
+
+
+        
+
+
+
 
         if (Physics.Raycast(landingRay, out hit, 2))
         {
-            if (hit.collider.tag == "End" && !done && space)
+            if (hit.collider.tag == "End" && !done)
             {
                 //SceneManager.UnloadSceneAsync(0);
-                Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
-                done = true;
-                space = false;
+                if (keepGoing)
+                {
+                    Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+                    done = true;
+                    keepGoing = false;
+                }
+                
                 //SceneManager.LoadScene(1);
 
             }
 
         }
 
-        
         if (done)
         {
             if (Input.GetKeyDown("space"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }    
+
+            }
 
         }
+
+
+
 
     }
 
