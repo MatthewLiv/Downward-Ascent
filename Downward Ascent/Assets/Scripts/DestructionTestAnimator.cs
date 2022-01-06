@@ -16,11 +16,6 @@ public class DestructionTestAnimator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("k"))
-        {
-            
-            Skel.GetComponent<Animator>().Play("Skeleton@Run");
-            Debug.Log("Well it got here");
-        }
+        
     }
 }

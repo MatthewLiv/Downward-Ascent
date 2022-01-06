@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3707863062842985373}
   - component: {fileID: 3707863062842985370}
   - component: {fileID: 3707863062842985371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 3707863062931388313}
   - component: {fileID: 3707863062931388315}
   - component: {fileID: 3707863062931388312}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: StaminaBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3707863063042866456}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 3707863063083412255}
   - component: {fileID: 3707863063083412241}
   - component: {fileID: 3707863063083412254}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CrosshairAndStamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3707863063438417819}
   - component: {fileID: 3707863063438417818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SprintBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 3707863063495028173}
   - component: {fileID: 3707863063495028175}
   - component: {fileID: 3707863063495028172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 3707863064238711041}
   - component: {fileID: 3707863064238711045}
   - component: {fileID: 3707863064238711044}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MyPersonController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 3707863064406806320}
   - component: {fileID: 3707863064406806322}
   - component: {fileID: 3707863064406806323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Reticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
