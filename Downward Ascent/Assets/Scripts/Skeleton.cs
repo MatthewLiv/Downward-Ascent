@@ -5,8 +5,59 @@ using UnityEngine.AI;
 
 public class Skeleton : MonoBehaviour
 {
-
+    private bool Obstacle;
     
+
+    private void Start()
+    {
+        int R = Random.Range(0, 361);
+        transform.Rotate(0, R, 0);
+        
+    }
+
+    private void Update()
+    {
+        transform.Translate(0, 0, Time.deltaTime * 5);
+
+        checkObstacle();
+        int i = 0;
+        while (i == 0)
+        {
+                if (Obstacle)
+                {
+                    transform.Rotate(0, 90, 0);
+                i = 1;
+                }
+        }
+        
+        
+
+    }
+
+
+    private void checkObstacle()
+    {
+        RaycastHit hit;
+        Vector3 p = transform.position;
+        Ray landingRay = new Ray(new Vector3(p.x, p.y + 0.5f, p.z), Vector3.forward);
+        Debug.DrawRay(new Vector3(p.x, p.y + 0.5f, p.z), Vector3.forward);
+
+        if (Physics.Raycast(landingRay, out hit, 2))
+        {
+            if (hit.collider.tag == "Ground")
+            {
+                Obstacle = true;
+                
+
+            }
+
+        }
+    }
+
+
+
+
+    /*
 
  
 
@@ -32,7 +83,7 @@ public class Skeleton : MonoBehaviour
 
        
 
-        /*if (!playerInSightRange && !playerInAttackRange)
+        if (!playerInSightRange && !playerInAttackRange)
         {
             Patroling();
         }
@@ -45,7 +96,7 @@ public class Skeleton : MonoBehaviour
         if (playerInSightRange && playerInAttackRange)
         {
             attackPlayer();
-        }*/
+        }
     }
 
     private void Patroling()
@@ -66,7 +117,7 @@ public class Skeleton : MonoBehaviour
     }
 
    
-
+    */
 
 
 }
