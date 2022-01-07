@@ -64,21 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3e0cf6c8c08da4c8b9f7b7aebdba1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 0}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 8
-  walkPoint: {x: 5, y: 5, z: 5}
-  walkPointRange: 5
-  timeBetweenAttacks: 0
-  sightRange: 5
-  attackRange: 0
-  playerInSightRange: 0
-  playerInAttackRange: 0
 --- !u!1001 &7770637421305021404
 PrefabInstance:
   m_ObjectHideFlags: 0
