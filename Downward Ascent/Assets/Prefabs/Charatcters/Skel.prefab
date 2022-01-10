@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6837768767503678164}
   - component: {fileID: 3872702480752306001}
   - component: {fileID: 9180937119227957182}
+  - component: {fileID: 815873139473816224}
+  - component: {fileID: 2835785257593389568}
   m_Layer: 0
   m_Name: Skel
   m_TagString: Player
@@ -64,6 +66,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3e0cf6c8c08da4c8b9f7b7aebdba1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &815873139473816224
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614769755449979338}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!136 &2835785257593389568
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614769755449979338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.020414352
+  m_Height: 0.17071414
+  m_Direction: 1
+  m_Center: {x: 0.003660202, y: 0.07398188, z: 0.0026102066}
 --- !u!1001 &7770637421305021404
 PrefabInstance:
   m_ObjectHideFlags: 0
