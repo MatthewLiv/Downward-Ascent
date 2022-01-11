@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class Skeleton : MonoBehaviour
 {
-    
-    
+
+    private int currentR;
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class Skeleton : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(0, 0, Time.deltaTime *1);
+        
 
         RaycastHit hit;
         Ray landingRay = new Ray(transform.position, Vector3.down);
@@ -32,16 +32,22 @@ public class Skeleton : MonoBehaviour
 
         if (Physics.Raycast(landingRay, out hit, 2))
         {
-            Debug.Log("weel it hit");
+            //Debug.Log("weel it hit");
             if (hit.collider.tag == "Turner")
             {
                 
-                transform.Rotate(0, 90, 0);
+                transform.Rotate(0,90 * Time.deltaTime, 0);
                 
 
             }
 
+            
+
+
+            
         }
+      
+        
 
     }
 
