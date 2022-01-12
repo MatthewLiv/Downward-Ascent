@@ -8,7 +8,9 @@ public class Skeleton : MonoBehaviour
 
     private float currentR;
 
-    private LayerMask player;
+    public LayerMask player;
+
+    public GameObject Player;
 
     private bool playerInSightRange;
 
@@ -18,14 +20,18 @@ public class Skeleton : MonoBehaviour
         currentR = Random.Range(0, 361);
 
         transform.Rotate(0, currentR, 0);
+
+        playerInSightRange = false;
         
     }
 
     private void Update()
     {
-        if (playerInSightRange!)
+        Debug.Log(playerInSightRange);
+        if (!playerInSightRange)
         {
-            playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
+            playerInSightRange = Physics.CheckSphere(transform.position, 5, player);
+            
         }
         
         //playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
@@ -66,7 +72,8 @@ public class Skeleton : MonoBehaviour
         
         void ChasePlayer()
         {
-
+            Transform t = Player.transform;
+            transform.Translate(t.x * Time.deltaTime, 0, t.z * Time.deltaTime);
         }
         
 
