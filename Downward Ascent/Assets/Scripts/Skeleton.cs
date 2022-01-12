@@ -6,7 +6,12 @@ using UnityEngine.AI;
 public class Skeleton : MonoBehaviour
 {
 
-    private int currentR;
+    private float currentR;
+
+    private LayerMask player;
+
+    private bool playerInSightRange;
+
 
     private void Start()
     {
@@ -18,30 +23,52 @@ public class Skeleton : MonoBehaviour
 
     private void Update()
     {
-
-        transform.Translate(0, 0, Time.deltaTime);
-
-        RaycastHit hit;
-        Ray landingRay = new Ray(transform.position, Vector3.down);
-
-
-        
-        if (Physics.Raycast(landingRay, out hit, 2))
+        if (playerInSightRange!)
         {
-            //Debug.Log("weel it hit");
-            if (hit.collider.tag == "Turner")
-            {
-                
-                transform.Rotate(0, currentR * -1 * Time.deltaTime, 0);
-                
-
-            }
+            playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
+        }
         
+        //playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
+
+
+        if (playerInSightRange)
+        {
+            ChasePlayer();
         }
 
+        else
+        {
+            transform.Translate(0, 0, Time.deltaTime);
+
+            RaycastHit hit;
+            Ray landingRay = new Ray(transform.position, Vector3.down);
+
+
+
+            if (Physics.Raycast(landingRay, out hit, 2))
+            {
+                //Debug.Log("weel it hit");
+                if (hit.collider.tag == "Turner")
+                {
+
+                    transform.Rotate(0, currentR * -1.2f * Time.deltaTime, 0);
+
+
+                }
+
+            }
+
+            else
+            {
+                currentR = transform.eulerAngles.y;
+            }
+        }
         
-       
-        //for y rote value: transform.eulerAngles.y
+        void ChasePlayer()
+        {
+
+        }
+        
 
     }
 
