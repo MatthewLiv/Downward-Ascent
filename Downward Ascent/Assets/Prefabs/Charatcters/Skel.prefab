@@ -69,6 +69,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 8
+  P: {fileID: 3707863064238711054, guid: 4012e62ba4cbbc14d8a3ad7cb4670421, type: 3}
 --- !u!54 &815873139473816224
 Rigidbody:
   m_ObjectHideFlags: 0

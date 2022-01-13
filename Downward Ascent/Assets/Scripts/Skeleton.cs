@@ -10,9 +10,17 @@ public class Skeleton : MonoBehaviour
 
     public LayerMask player;
 
-    public GameObject Player;
+    public GameObject P;
 
     private bool playerInSightRange;
+    private bool playerInAttackRange;
+
+    //chasing
+    public NavMeshAgent enemy;
+    public Transform ayer;
+    private Animator mAnimator;
+
+   
 
 
     private void Start()
@@ -22,6 +30,9 @@ public class Skeleton : MonoBehaviour
         transform.Rotate(0, currentR, 0);
 
         playerInSightRange = false;
+
+        mAnimator = GetComponent<Animator>();
+        
         
     }
 
@@ -30,16 +41,29 @@ public class Skeleton : MonoBehaviour
         Debug.Log(playerInSightRange);
         if (!playerInSightRange)
         {
-            playerInSightRange = Physics.CheckSphere(transform.position, 5, player);
-            
+            playerInSightRange = Physics.CheckSphere(transform.position, 7, player);
+            if (playerInSightRange)
+            {
+                mAnimator.SetTrigger("Seen");
+                enemy.speed = 25;
+                enemy.angularSpeed = 50;
+            }
         }
-        
+
         //playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
+        playerInAttackRange = Physics.CheckSphere(transform.position, 3, player);
+
+        if (playerInAttackRange)
+        {
+            mAnimator.Play("Attack");
+            //enemy.isStopped = true;
+        }
 
 
-        if (playerInSightRange)
+        else if (playerInSightRange)
         {
             ChasePlayer();
+
         }
 
         else
@@ -72,9 +96,17 @@ public class Skeleton : MonoBehaviour
         
         void ChasePlayer()
         {
-            Transform t = Player.transform;
-            transform.Translate(t.x * Time.deltaTime, 0, t.z * Time.deltaTime);
+            /* Transform t = P.transform;
+             Debug.Log(t.position.x + " " + t.position.z);
+             transform.Translate(t.position.x * Time.deltaTime, 0, t.position.z * Time.deltaTime);
+             */
+
+            enemy.SetDestination(ayer.position);
+
+
         }
+
+
         
 
     }
