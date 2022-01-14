@@ -47,6 +47,7 @@ public class Skeleton : MonoBehaviour
                 mAnimator.SetTrigger("Seen");
                 enemy.speed = 25;
                 enemy.angularSpeed = 50;
+              // mAnimator.Play("Run")
             }
         }
 
@@ -55,19 +56,28 @@ public class Skeleton : MonoBehaviour
 
         if (playerInAttackRange)
         {
+            enemy.SetDestination(transform.position);
             mAnimator.Play("Attack");
+            
             //enemy.isStopped = true;
+        }
+
+        else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+
         }
 
 
         else if (playerInSightRange)
         {
+            enemy.speed = 25;
             ChasePlayer();
 
         }
 
         else
         {
+            
             transform.Translate(0, 0, Time.deltaTime);
 
             RaycastHit hit;
