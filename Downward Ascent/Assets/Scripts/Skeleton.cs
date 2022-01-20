@@ -17,7 +17,7 @@ public class Skeleton : MonoBehaviour
 
     //chasing
     public NavMeshAgent enemy;
-    public Transform ayer;
+    private Transform ayer;
     private Animator mAnimator;
 
    
@@ -32,6 +32,8 @@ public class Skeleton : MonoBehaviour
         playerInSightRange = false;
 
         mAnimator = GetComponent<Animator>();
+
+        ayer = GameObject.Find("MyPersonController").transform;
         
         
     }
@@ -46,13 +48,13 @@ public class Skeleton : MonoBehaviour
             {
                 mAnimator.SetTrigger("Seen");
                 enemy.speed = 25;
-                enemy.angularSpeed = 50;
+                enemy.angularSpeed = 1000;
               // mAnimator.Play("Run")
             }
         }
 
         //playerInSightRange = Physics.CheckSphere(transform.position, 10, player);
-        playerInAttackRange = Physics.CheckSphere(transform.position, 3, player);
+        playerInAttackRange = Physics.CheckSphere(transform.position, 1, player);
 
         if (playerInAttackRange)
         {

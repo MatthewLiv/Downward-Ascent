@@ -72,7 +72,6 @@ MonoBehaviour:
     m_Bits: 8
   P: {fileID: 3707863064238711054, guid: 4012e62ba4cbbc14d8a3ad7cb4670421, type: 3}
   enemy: {fileID: 1237009027524865461}
-  ayer: {fileID: 0}
 --- !u!54 &1907324350418042797
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -112,7 +111,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 523101047630320839}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.05
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
