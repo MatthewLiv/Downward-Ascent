@@ -4,54 +4,76 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private bool Pressed;
+    private bool attacking;
     private bool down;
+
+    public int downspeed;
+    public int upspeed;
+
+    public GameObject tracker;
+    public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        down = true;
+        //transform.Rotate(-1, 0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("It gets to here");
-        if (Input.GetKeyDown("space"))
+
+        //Debug.Log("E: " + transform.eulerAngles.x);
+        //Debug.Log("Q: " + transform.rotation.eulerAngles.x);
+
+        //transform.Rotate(-20 * Time.deltaTime, 0, 0);
+
+        Debug.Log(tracker.transform.position.y);
+
+        if (Input.GetMouseButtonDown(0) && !attacking)
         {
-            
-            Pressed = true;
+            attacking = true;
+            down = true;
         }
 
-        if (Pressed)
+        if (attacking && down)
         {
-            
-            Swing();
+            Down();
+        }
+
+        else if (attacking)
+        {
+            Up();
         }
     }
 
-    private void Swing()
+    void Down()
     {
-        
-        if (down && transform.eulerAngles.x < 130)
+        if (tracker.transform.position.y - player.position.y > -20)
         {
-            transform.Rotate(Time.deltaTime, 0, 0);
+            transform.Rotate(-downspeed * Time.deltaTime, 0, 0);
         }
 
         else
         {
             down = false;
         }
+    }
 
-        if (!down && transform.eulerAngles.x > 0)
+    void Up()
+    {
+        if (tracker.transform.position.y - player.position.y < 49.47)
         {
-            transform.Rotate(-Time.deltaTime, 0, 0);
+            transform.Rotate(upspeed * Time.deltaTime, 0, 0);
         }
 
         else
         {
-            down = true;
-            Pressed = false;
+            attacking = false;
         }
+
     }
+
+
+    
 }
