@@ -26,16 +26,7 @@ public class Sword : MonoBehaviour
         }
     }
 
-    void Down()
-    {
-        
-    }
-
-    void Up()
-    {
-        
-
-    }
+    
 
 
     
