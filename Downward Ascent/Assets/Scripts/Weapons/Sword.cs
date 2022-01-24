@@ -4,73 +4,36 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    private bool attacking;
-    private bool down;
-
-    public int downspeed;
-    public int upspeed;
-
-    public GameObject tracker;
-    public Transform player;
+    private Animator mAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
         //transform.Rotate(-1, 0, 0);
+        mAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        //Debug.Log("E: " + transform.eulerAngles.x);
-        //Debug.Log("Q: " + transform.rotation.eulerAngles.x);
-
-        //transform.Rotate(-20 * Time.deltaTime, 0, 0);
-
-        Debug.Log(tracker.transform.position.y);
-
-        if (Input.GetMouseButtonDown(0) && !attacking)
+        if (Input.GetMouseButtonDown(0))
         {
-            attacking = true;
-            down = true;
+            mAnimator.SetBool("Attack", true);
         }
-
-        if (attacking && down)
+        else
         {
-            Down();
-        }
-
-        else if (attacking)
-        {
-            Up();
+            mAnimator.SetBool("Attack", false);
         }
     }
 
     void Down()
     {
-        if (tracker.transform.position.y - player.position.y > -20)
-        {
-            transform.Rotate(-downspeed * Time.deltaTime, 0, 0);
-        }
-
-        else
-        {
-            down = false;
-        }
+        
     }
 
     void Up()
     {
-        if (tracker.transform.position.y - player.position.y < 49.47)
-        {
-            transform.Rotate(upspeed * Time.deltaTime, 0, 0);
-        }
-
-        else
-        {
-            attacking = false;
-        }
+        
 
     }
 
