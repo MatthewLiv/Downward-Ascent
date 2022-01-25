@@ -24,6 +24,7 @@ public class Sword : MonoBehaviour
         {
             mAnimator.SetBool("Attack", false);
         }
+        Debug.Log(mAnimator.bodyPosition);
     }
 
     
