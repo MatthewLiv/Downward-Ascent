@@ -60,7 +60,8 @@ public class FirstPersonController : MonoBehaviour
     public float maxVelocityChange = 10f;
 
     // Internal Variables
-    private bool isWalking = false;
+    //Changed from private if that creates errors
+    public bool isWalking = false;
 
     #region Sprint
 
