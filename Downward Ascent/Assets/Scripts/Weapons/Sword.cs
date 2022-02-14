@@ -18,15 +18,34 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
+        {
+            mAnimator.SetTrigger("Attack");
+        }
+
+
+
+
+       /*/ if (Input.GetMouseButtonDown(0))
         {
             mAnimator.SetBool("Attack", true);
         }
         else
         {
             mAnimator.SetBool("Attack", false);
+
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                mAnimator.SetBool("Walking", true);
+            }
+            else
+            {
+                mAnimator.SetBool("Walking", false);
+            }
         }
-       
+        
+        //Player.isWalking;
         if (Player.isWalking)
         {
             mAnimator.SetBool("Walking", true);
@@ -34,9 +53,9 @@ public class Sword : MonoBehaviour
         else
         {
             mAnimator.SetBool("Walking", false);
-        }
+        }*/
 
-
+        
 
     }
 
