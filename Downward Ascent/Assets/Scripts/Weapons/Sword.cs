@@ -27,10 +27,11 @@ public class Sword : MonoBehaviour
 
 
         else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        
         {
             mAnimator.SetTrigger("walking");
         }
-
+        Debug.Log(Input.GetAxis("Horizontal"));
         /*else
         {
             mAnimator.SetBool("Walking", false);
