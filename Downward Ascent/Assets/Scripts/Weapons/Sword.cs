@@ -18,6 +18,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int Trig = -1;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -29,14 +30,42 @@ public class Sword : MonoBehaviour
         else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         
         {
-            mAnimator.SetTrigger("Running");
+            if (Input.GetKeyDown("left shift"))
+            {
+                mAnimator.SetTrigger("Running");
+                Trig = 2;
+            }
+            else
+            {
+                mAnimator.SetTrigger("walking");
+                Trig = 1;
+            }
+            
         }
 
-        else
+        
+        if (Trig == 2)
         {
             mAnimator.ResetTrigger("Running");
         }
-        Debug.Log(Input.GetAxis("Horizontal"));
+        
+        if (Trig == 1)
+        {
+            mAnimator.ResetTrigger("walking");
+        }
+        
+        
+        /*else
+        {
+            mAnimator.ResetTrigger("Running");
+            mAnimator.ResetTrigger("walking");
+        }*/
+        
+
+
+
+
+
         /*else
         {
             mAnimator.SetBool("Walking", false);
