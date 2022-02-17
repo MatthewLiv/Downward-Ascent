@@ -33,7 +33,7 @@ public class Skeleton : MonoBehaviour
 
         mAnimator = GetComponent<Animator>();
 
-        ayer = GameObject.Find("MyPersonController").transform;
+        ayer = GameObject.Find("SwordPerson").transform;
         
         
     }
