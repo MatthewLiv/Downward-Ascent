@@ -19,26 +19,29 @@ public class Sword : MonoBehaviour
     void Update()
     {
         int Trig = -1;
-
+        Debug.Log(Input.GetKeyDown("left shift"));
         if (Input.GetMouseButtonDown(0))
         {
             mAnimator.SetTrigger("Attack");
         }
 
+        bool moving = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
 
+        
 
         else if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         
         {
             if (Input.GetKeyDown("left shift"))
             {
-                mAnimator.SetTrigger("Running");
-                Trig = 2;
+                mAnimator.SetTrigger("walking");
+                Trig = 1;
+               
             }
             else
             {
-                mAnimator.SetTrigger("walking");
-                Trig = 1;
+                mAnimator.SetTrigger("Running");
+                Trig = 2;
             }
             
         }
@@ -46,12 +49,12 @@ public class Sword : MonoBehaviour
         
         if (Trig == 2)
         {
-            mAnimator.ResetTrigger("Running");
+            //mAnimator.ResetTrigger("Running");
         }
         
         if (Trig == 1)
         {
-            mAnimator.ResetTrigger("walking");
+            //mAnimator.ResetTrigger("walking");
         }
         
         
