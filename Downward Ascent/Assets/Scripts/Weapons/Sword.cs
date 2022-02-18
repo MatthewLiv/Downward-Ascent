@@ -18,7 +18,7 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Input.GetMouseButtonDown(0))
         {
             mAnimator.SetTrigger("Attack");
@@ -34,14 +34,14 @@ public class Sword : MonoBehaviour
             mAnimator.ResetTrigger("walking");
         }
 
-            
 
 
 
-        }
-
-    
 
 
-    
+
+
+
+
+    }
 }

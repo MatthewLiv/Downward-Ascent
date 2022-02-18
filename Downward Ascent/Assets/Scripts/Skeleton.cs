@@ -40,7 +40,7 @@ public class Skeleton : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerInSightRange);
+        
         if (!playerInSightRange)
         {
             playerInSightRange = Physics.CheckSphere(transform.position, 7, player);
