@@ -118,16 +118,20 @@ public class Skeleton : MonoBehaviour
 
         }
 
+        
 
         
 
     }
 
-        
-  
 
-   
-    
+
+    private void OnTriggerEnter(Collider col)
+    {
+        mAnimator.Play("Death");
+    }
+
+
 
 
 }

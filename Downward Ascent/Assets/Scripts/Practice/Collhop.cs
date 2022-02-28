@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class Collhop : MonoBehaviour
 {
-    void OnCollisionEnter(Collision col)
+    private float speed = -2f;
+
+    private void OnTriggerEnter(Collider col)
     {
-        Destroy(this);
+        speed = speed * -1;
+    }
+
+    void Update()
+    {
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
+        if (Input.GetKeyDown("space"))
+        {
+            speed = speed * -1;
+        }
     }
 }
