@@ -20,6 +20,9 @@ public class Skeleton : MonoBehaviour
     private Transform ayer;
     private Animator mAnimator;
 
+    private bool dead;
+    private float deathTime;
+
    
 
 
@@ -40,6 +43,14 @@ public class Skeleton : MonoBehaviour
 
     private void Update()
     {
+        if (dead)
+        {
+            if (Time.time - deathTime > 5)
+            {
+                Destroy(gameObject);
+            }
+            return;
+        }
         
         if (!playerInSightRange)
         {
@@ -129,6 +140,8 @@ public class Skeleton : MonoBehaviour
     private void OnTriggerEnter(Collider col)
     {
         mAnimator.Play("Death");
+        dead = true;
+        deathTime = Time.time;
     }
 
 
