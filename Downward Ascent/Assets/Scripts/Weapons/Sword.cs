@@ -24,6 +24,8 @@ public class Sword : MonoBehaviour
     void Update()
     {
 
+        Debug.Log(collider.enabled);
+
         if (Input.GetMouseButtonDown(0))
         {
             mAnimator.SetTrigger("Attack");
