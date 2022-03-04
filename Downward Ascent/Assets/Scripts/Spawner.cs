@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     private int fillcount;
     private bool keepGoing;
     private bool done = false;
-
+    private bool hit;
 
 
 
@@ -547,7 +547,10 @@ public class Spawner : MonoBehaviour
         
 
 
-        
+        if (Input.GetKeyDown("k"))
+        {
+            Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+        }
 
 
 
