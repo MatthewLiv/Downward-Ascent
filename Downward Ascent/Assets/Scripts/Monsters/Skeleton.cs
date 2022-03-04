@@ -23,7 +23,8 @@ public class Skeleton : MonoBehaviour
     private bool dead;
     private float deathTime;
 
-    SpriteRenderer rend;
+    
+    //SpriteRenderer rend;
 
    
 
@@ -40,7 +41,8 @@ public class Skeleton : MonoBehaviour
 
         ayer = GameObject.Find("SwordPerson").transform;
 
-        rend = GetComponent<SpriteRenderer>();
+        //rend = GetComponent<SpriteRenderer>();
+        
         
         
     }
@@ -51,10 +53,10 @@ public class Skeleton : MonoBehaviour
         {
             if (Time.time - deathTime > 3)
             {
-                Color c = rend.material.color;
-                c.a = c.a - 0.5f;
-                rend.material.color = c;
-
+                //Color c = rend.material.color;
+                //c.a = c.a - 0.5f;
+                //rend.material.color = c;
+                Destroy(gameObject);
             }
             return;
         }
@@ -152,7 +154,7 @@ public class Skeleton : MonoBehaviour
         deathTime = Time.time;
     }
 
-
+   
 
 
 }
