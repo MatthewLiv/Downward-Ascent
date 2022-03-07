@@ -263,6 +263,7 @@ MonoBehaviour:
   - {fileID: 4554231615468015380, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
   Person: {fileID: 8367355756942026709, guid: e178317e663997648bb5f1ba89afbc9c, type: 3}
   EndScreen: {fileID: 8847197012801529501, guid: b03cbc3d4b273ae4089ac010c5ff9b93, type: 3}
+  HUD: {fileID: 6722060750383413313, guid: 927b9c8790852ea4cab8f981418b6b16, type: 3}
 --- !u!4 &1858746766
 Transform:
   m_ObjectHideFlags: 0

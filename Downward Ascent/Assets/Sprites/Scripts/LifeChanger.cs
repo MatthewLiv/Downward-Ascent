@@ -1,0 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class LifeChanger : MonoBehaviour
+{
+    public Text scoretext;
+    private int score;
+
+    public Text leveltext;
+    private int area;
+    private int level;
+
+    public Text Moneytext;
+    private int money;
+
+    void Start()
+    {
+        score = 4;
+        area = 1;
+        level = 1;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            score -= 1;
+            scoretext.text = score.ToString();
+        }
+
+        if (Input.GetKeyDown("a"))
+        {
+            level += 1;
+            if (level == 5)
+            {
+                area += 1;
+                level = 1;
+            }
+            leveltext.text = area.ToString() + "-" + level.ToString();
+        }
+
+        if (Input.GetKeyDown("s"))
+        {
+            money += 500;
+            Moneytext.text = "$" + money;
+        }
+    }
+}

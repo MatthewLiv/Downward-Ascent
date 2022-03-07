@@ -22,6 +22,8 @@ public class Spawner : MonoBehaviour
     private bool keepGoing;
     private bool done = false;
     private bool hit;
+    public GameObject HUD;
+    public int Lives;
 
 
 
@@ -49,6 +51,7 @@ public class Spawner : MonoBehaviour
 
         Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
         keepGoing = true;
+        Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
 
 
     }
