@@ -7,7 +7,7 @@ public class Sword : MonoBehaviour
     private Animator mAnimator;
     public GameObject Player;
 
-    public BoxCollider collider;
+    private BoxCollider collider;
 
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,8 @@ public class Sword : MonoBehaviour
         //transform.Rotate(-1, 0, 0);
         mAnimator = GetComponent<Animator>();
 
-        //collider = GetComponent<BoxCollider>();
-        //collider.enabled = false;
+        collider = GetComponent<BoxCollider>();
+        collider.enabled = false;
 
     }
 
@@ -42,7 +42,7 @@ public class Sword : MonoBehaviour
         }
 
 
-
+        
 
 
 

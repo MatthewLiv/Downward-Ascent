@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class HitDetect : MonoBehaviour
 {
-    
+
+    public GameObject Redscreen;
 
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log("I'm hitsds");
+       if (col.gameObject.name == "SkelSword")
+        {
+            Instantiate(Redscreen, new Vector3(0, 0, 0), Redscreen.transform.rotation);
+        }
+        
     }
-
+    
 
 }

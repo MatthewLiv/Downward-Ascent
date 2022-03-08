@@ -148,10 +148,14 @@ public class Skeleton : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        mAnimator.Play("Death");
-        Destroy(enemy);
-        dead = true;
-        deathTime = Time.time;
+        if (col.gameObject.name == "Good Katana")
+        {
+            mAnimator.Play("Death");
+            Destroy(enemy);
+            dead = true;
+            deathTime = Time.time;
+        }
+       
     }
 
    
