@@ -15,8 +15,8 @@ public class Sword : MonoBehaviour
         //transform.Rotate(-1, 0, 0);
         mAnimator = GetComponent<Animator>();
 
-        collider = GetComponent<BoxCollider>();
-        collider.enabled = false;
+        //collider = GetComponent<BoxCollider>();
+        //collider.enabled = false;
 
     }
 
@@ -24,7 +24,7 @@ public class Sword : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(collider.enabled);
+       //Debug.Log(collider.enabled);
 
         if (Input.GetMouseButtonDown(0))
         {
