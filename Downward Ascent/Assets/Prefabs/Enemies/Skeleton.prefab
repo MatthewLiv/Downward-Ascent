@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1907324350418042797}
   - component: {fileID: 3922642434414405389}
   - component: {fileID: 1237009027524865461}
+  - component: {fileID: 6531184578039635722}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Player
@@ -124,6 +125,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &6531184578039635722
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523101047630320839}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.020414352
+  m_Height: 0.17071414
+  m_Direction: 1
+  m_Center: {x: 0.003660202, y: 0.07398188, z: 0.0026102066}
 --- !u!1001 &8862068910229186257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5750568268512436185}
     m_Modifications:
+    - target: {fileID: 100074, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
+      propertyPath: m_Name
+      value: SkelSword
+      objectReference: {fileID: 0}
     - target: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
       propertyPath: m_Name
       value: Skeleton@Skin
