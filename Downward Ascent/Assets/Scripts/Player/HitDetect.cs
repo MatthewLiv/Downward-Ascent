@@ -9,7 +9,7 @@ public class HitDetect : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-       if (col.gameObject.name == "Skeleton")
+       if (col.gameObject.name == "SkelSword")
         {
             Instantiate(Redscreen, new Vector3(0, 0, 0), Redscreen.transform.rotation);
         }
