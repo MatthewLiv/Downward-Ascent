@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 3707863064238711041}
   - component: {fileID: 3707863064238711045}
   - component: {fileID: 3707863064238711044}
+  - component: {fileID: 8831248024742121800}
   m_Layer: 3
   m_Name: MyPersonController
   m_TagString: Player
@@ -543,6 +544,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 5
   maxVelocityChange: 10
+  isWalking: 0
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
@@ -569,6 +571,19 @@ MonoBehaviour:
   joint: {fileID: 3707863063042866456}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
+--- !u!114 &8831248024742121800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3707863064238711054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575b2bb8231fcba469f15f32abdc37e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HUD: {fileID: 6722060750383413313, guid: 927b9c8790852ea4cab8f981418b6b16, type: 3}
 --- !u!1 &3707863064406806321
 GameObject:
   m_ObjectHideFlags: 0

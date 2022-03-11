@@ -15,6 +15,10 @@ public class SkelSwordCol : MonoBehaviour
         col.enabled = false;
     }
 
+    private void Update()
+    {
+        //Debug.Log(col.enabled);
+    }
     
 
     public void EnterAttack()

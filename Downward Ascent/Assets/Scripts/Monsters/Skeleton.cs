@@ -79,12 +79,13 @@ public class Skeleton : MonoBehaviour
         if (playerInAttackRange)
         {
             enemy.SetDestination(transform.position);
-            mAnimator.Play("Attack");
+            mAnimator.Play("Attack 1");
+            //GameObject.SkelSwordCol.EndAttack();
             
             //enemy.isStopped = true;
         }
 
-        else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack 1"))
         {
 
         }
@@ -150,7 +151,7 @@ public class Skeleton : MonoBehaviour
     {
         if (col.gameObject.name == "Good Katana")
         {
-            mAnimator.Play("Death");
+            mAnimator.Play("Death 0");
             Destroy(enemy);
             dead = true;
             deathTime = Time.time;
