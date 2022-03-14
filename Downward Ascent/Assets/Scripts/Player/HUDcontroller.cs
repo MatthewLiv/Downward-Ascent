@@ -5,6 +5,7 @@ using UnityEngine;
 public class HUDcontroller : MonoBehaviour
 {
     public GameObject HUD;
+    
     //private int lives = 4;
 
     // Start is called before the first frame update

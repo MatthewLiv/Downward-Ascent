@@ -369,6 +369,10 @@ PrefabInstance:
       propertyPath: HUD
       value: 
       objectReference: {fileID: 6722060750383413313, guid: 927b9c8790852ea4cab8f981418b6b16, type: 3}
+    - target: {fileID: 9045141101499153491, guid: e178317e663997648bb5f1ba89afbc9c, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1411870574}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e178317e663997648bb5f1ba89afbc9c, type: 3}
 --- !u!1001 &566215206
@@ -2098,6 +2102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Redscreen: {fileID: 5638271435407417794, guid: 3a730dec7d565b94d8970d410207eef8, type: 3}
+  Player: {fileID: 1411870574}
 --- !u!1 &1814042842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 523101047630320839, guid: f78f69cbaa253ba4689c87d7b76a04a0, type: 3}

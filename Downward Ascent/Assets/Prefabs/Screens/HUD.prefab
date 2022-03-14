@@ -118,10 +118,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6722060749977263811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0628eda7ab3e06844b6927beb93c16c3, type: 3}
+  m_Script: {fileID: 11500000, guid: cef2ef5d1a40c354caea4691b69bb9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoretext: {fileID: 6722060750211312993}
+  score: 0
   leveltext: {fileID: 6722060750561508139}
   Moneytext: {fileID: 6722060751221288716}
 --- !u!1 &6722060750211312994
@@ -158,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -287.10095, y: 147.68388}
+  m_AnchoredPosition: {x: -284, y: 143}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6722060750211312998
@@ -191,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 27
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -454,7 +455,7 @@ MonoBehaviour:
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0

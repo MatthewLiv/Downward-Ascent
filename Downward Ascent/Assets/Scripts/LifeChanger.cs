@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LifeChanger : MonoBehaviour
 {
     public Text scoretext;
-    private int score;
+    public int score;
 
     public Text leveltext;
     private int area;
@@ -18,6 +18,7 @@ public class LifeChanger : MonoBehaviour
     void Start()
     {
         score = 4;
+        //scoretext.text = "4";
         area = 1;
         level = 1;
     }
@@ -47,5 +48,11 @@ public class LifeChanger : MonoBehaviour
             money += 500;
             Moneytext.text = "$" + money;
         }
+    }
+
+    public void LoseLife()
+    {
+        score -= 1;
+        scoretext.text = score.ToString();
     }
 }
