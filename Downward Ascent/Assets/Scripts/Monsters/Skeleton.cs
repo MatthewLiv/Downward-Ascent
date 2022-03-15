@@ -67,8 +67,9 @@ public class Skeleton : MonoBehaviour
             if (playerInSightRange)
             {
                 mAnimator.SetTrigger("Seen");
-                enemy.speed = 25;
-                enemy.angularSpeed = 1000;
+                enemy.acceleration = 20;
+                //enemy.velocity = new Vector3(1, 0, 0);
+                enemy.angularSpeed = 100000;
               // mAnimator.Play("Run")
             }
         }
@@ -149,13 +150,17 @@ public class Skeleton : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.name == "Good Katana")
+        if (!dead)
         {
-            mAnimator.Play("Death 0");
-            Destroy(enemy);
-            dead = true;
-            deathTime = Time.time;
+            if (col.gameObject.name == "Good Katana")
+            {
+                mAnimator.Play("Death 0");
+                Destroy(enemy);
+                dead = true;
+                deathTime = Time.time;
+            }
         }
+        
        
     }
 
