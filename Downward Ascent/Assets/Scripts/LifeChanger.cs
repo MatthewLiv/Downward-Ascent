@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LifeChanger : MonoBehaviour
 {
     public Text scoretext;
-    public int score;
+    public static int score;
 
     public Text leveltext;
     private int area;
@@ -26,11 +26,12 @@ public class LifeChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            score -= 1;
-            scoretext.text = score.ToString();
-        }
+        //if (Input.GetKeyDown("space"))
+        //{
+           // score -= 1;
+            
+       // }
+        scoretext.text = score.ToString();
 
         if (Input.GetKeyDown("a"))
         {
@@ -50,9 +51,9 @@ public class LifeChanger : MonoBehaviour
         }
     }
 
-    public void LoseLife()
+    public static void LoseLife()
     {
         score -= 1;
-        scoretext.text = score.ToString();
+       // scoretext.text = score.ToString();
     }
 }

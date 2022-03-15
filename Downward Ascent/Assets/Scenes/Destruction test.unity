@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2102,7 +2102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Redscreen: {fileID: 5638271435407417794, guid: 3a730dec7d565b94d8970d410207eef8, type: 3}
-  Player: {fileID: 1411870574}
 --- !u!1 &1814042842 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 523101047630320839, guid: f78f69cbaa253ba4689c87d7b76a04a0, type: 3}
