@@ -36,7 +36,7 @@ public class HitDetect : MonoBehaviour
             {
                 hit = false;
                 Destroy(r);
-                if (LifeChanger.score == 0)
+                if (LifeChanger.score <= 0)
                 {
                     SceneManager.LoadScene("Death Screen");
                 }
