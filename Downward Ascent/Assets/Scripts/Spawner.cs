@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Spawner : MonoBehaviour
     //public GameObject HUD;
     //public int Lives;
 
+    public NavMeshSurface navSurface;
 
 
 
@@ -46,6 +48,8 @@ public class Spawner : MonoBehaviour
         resetThem();
         level = -48;
         SpawnBott(nextspot, 0);
+
+        navSurface.BuildNavMesh();
 
         //create player
 
