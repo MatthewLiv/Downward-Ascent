@@ -28,6 +28,8 @@ public class Spawner : MonoBehaviour
 
     public NavMeshSurface navSurface;
 
+    public GameObject Skeleton;
+
 
 
     // Start is called before the first frame update
@@ -56,6 +58,8 @@ public class Spawner : MonoBehaviour
         Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
         keepGoing = true;
         //Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
+
+        Instantiate(Skeleton, new Vector3(10, 10, 20), Skeleton.transform.rotation);
 
 
     }
@@ -556,7 +560,8 @@ public class Spawner : MonoBehaviour
 
         if (Input.GetKeyDown("k"))
         {
-            Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+            //Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+            SceneManager.LoadScene("The Game");
         }
 
 

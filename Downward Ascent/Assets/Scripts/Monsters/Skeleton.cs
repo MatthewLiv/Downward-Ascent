@@ -38,17 +38,32 @@ public class Skeleton : MonoBehaviour
         playerInSightRange = false;
 
         mAnimator = GetComponent<Animator>();
+        //mAnimator.Play("Walk");
 
         ayer = GameObject.Find("SwordPerson(Clone)").transform;
+        //ayer = GameObject.Find("SwordPerson").transform;
+
+        /*if (ayer == null)
+        {
+            ayer = GameObject.Find("SwordPerson").transform;
+        }*/
 
         //rend = GetComponent<SpriteRenderer>();
-        
-        
-        
+
+
+
     }
 
     private void Update()
     {
+
+        if (Input.GetKeyDown("l"))
+        {
+            //Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
+            //SceneManager.LoadScene("The Game");
+            mAnimator.Play("Damage");
+        }
+
         //Debug.Log(ayer);
         if (dead)
         {

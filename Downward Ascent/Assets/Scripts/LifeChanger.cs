@@ -53,7 +53,15 @@ public class LifeChanger : MonoBehaviour
 
     public static void LoseLife()
     {
-        score -= 1;
+        if (score == 0)
+        {
+
+        }
+        else
+        {
+            score -= 1;
+        }
+        
        // scoretext.text = score.ToString();
     }
 }
