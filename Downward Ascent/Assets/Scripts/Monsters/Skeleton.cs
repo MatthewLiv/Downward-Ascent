@@ -39,7 +39,7 @@ public class Skeleton : MonoBehaviour
 
         mAnimator = GetComponent<Animator>();
 
-        ayer = GameObject.Find("SwordPerson").transform;
+        ayer = GameObject.Find("SwordPerson(Clone)").transform;
 
         //rend = GetComponent<SpriteRenderer>();
         
@@ -49,6 +49,7 @@ public class Skeleton : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(ayer);
         if (dead)
         {
             if (Time.time - deathTime > 3)
