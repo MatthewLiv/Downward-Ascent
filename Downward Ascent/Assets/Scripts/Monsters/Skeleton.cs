@@ -40,8 +40,8 @@ public class Skeleton : MonoBehaviour
         mAnimator = GetComponent<Animator>();
         //mAnimator.Play("Walk");
 
-        //ayer = GameObject.Find("SwordPerson(Clone)").transform;
-        ayer = GameObject.Find("SwordPerson").transform;
+        ayer = GameObject.Find("SwordPerson(Clone)").transform;
+        //ayer = GameObject.Find("SwordPerson").transform;
 
         
 
