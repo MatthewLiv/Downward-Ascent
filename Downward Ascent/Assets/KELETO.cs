@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Skeleton : MonoBehaviour
+public class KELETO : MonoBehaviour
 {
 
     private float currentR;
@@ -23,10 +23,10 @@ public class Skeleton : MonoBehaviour
     private bool dead;
     private float deathTime;
 
-    
+
     //SpriteRenderer rend;
 
-   
+
 
 
     private void Start()
@@ -43,7 +43,7 @@ public class Skeleton : MonoBehaviour
         ayer = GameObject.Find("SwordPerson(Clone)").transform;
         //ayer = GameObject.Find("SwordPerson").transform;
 
-        
+
 
         /*if (ayer == null)
         {
@@ -61,12 +61,7 @@ public class Skeleton : MonoBehaviour
 
         Debug.Log(mAnimator.enabled);
 
-        if (Input.GetKeyDown("l"))
-        {
-            //Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
-            //SceneManager.LoadScene("The Game");
-            mAnimator.Play("Damage");
-        }
+        
 
         //Debug.Log(ayer);
         if (dead)
@@ -80,7 +75,7 @@ public class Skeleton : MonoBehaviour
             }
             return;
         }
-        
+
         if (!playerInSightRange)
         {
             playerInSightRange = Physics.CheckSphere(transform.position, 7, player);
@@ -90,7 +85,7 @@ public class Skeleton : MonoBehaviour
                 enemy.acceleration = 20;
                 //enemy.velocity = new Vector3(1, 0, 0);
                 enemy.angularSpeed = 100000;
-              // mAnimator.Play("Run")
+                // mAnimator.Play("Run")
             }
         }
 
@@ -102,7 +97,7 @@ public class Skeleton : MonoBehaviour
             enemy.SetDestination(transform.position);
             mAnimator.Play("Attack");
             //GameObject.SkelSwordCol.EndAttack();
-            
+
             //enemy.isStopped = true;
         }
 
@@ -121,7 +116,7 @@ public class Skeleton : MonoBehaviour
 
         else
         {
-            
+
             transform.Translate(0, 0, Time.deltaTime);
 
             RaycastHit hit;
@@ -147,7 +142,7 @@ public class Skeleton : MonoBehaviour
                 currentR = transform.eulerAngles.y;
             }
         }
-        
+
         void ChasePlayer()
         {
             /* Transform t = P.transform;
@@ -160,9 +155,9 @@ public class Skeleton : MonoBehaviour
 
         }
 
-        
 
-        
+
+
 
     }
 
@@ -174,17 +169,18 @@ public class Skeleton : MonoBehaviour
         {
             if (col.gameObject.name == "Good Katana")
             {
-                mAnimator.Play("Death 0");
+                mAnimator.Play("Death");
                 Destroy(enemy);
                 dead = true;
                 deathTime = Time.time;
             }
         }
-        
-       
+
+
     }
 
-   
+
 
 
 }
+
