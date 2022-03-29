@@ -95,13 +95,13 @@ public class KELETO : MonoBehaviour
         if (playerInAttackRange)
         {
             enemy.SetDestination(transform.position);
-            mAnimator.Play("Attack");
+            mAnimator.Play("attac");
             //GameObject.SkelSwordCol.EndAttack();
 
             //enemy.isStopped = true;
         }
 
-        else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        else if (mAnimator.GetCurrentAnimatorStateInfo(0).IsName("attac"))
         {
 
         }
