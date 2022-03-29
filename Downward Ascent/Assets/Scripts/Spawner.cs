@@ -59,7 +59,7 @@ public class Spawner : MonoBehaviour
         keepGoing = true;
         //Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
 
-        Instantiate(Skeleton, new Vector3(10, 10, 20), Skeleton.transform.rotation);
+        Instantiate(Skeleton, new Vector3(10, 5, 20), Skeleton.transform.rotation);
 
 
     }

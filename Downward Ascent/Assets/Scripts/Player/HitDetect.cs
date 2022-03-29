@@ -15,8 +15,10 @@ public class HitDetect : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-       if (col.gameObject.name == "SkelSword")
+        Debug.Log("Works");
+        if (col.gameObject.name == "Object01")
         {
+            
              r = Instantiate(Redscreen, new Vector3(0, 0, 0), Redscreen.transform.rotation);
             //LifeChanger.score -= 1;
             //LifeChanger.scoretext.text = LifeChanger.score.ToString();
