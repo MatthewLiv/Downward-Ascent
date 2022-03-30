@@ -12,7 +12,7 @@ public class DeathScene : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            SceneManager.LoadScene("Destruction test");
+            SceneManager.LoadScene("The Game");
         }
     }
 }
