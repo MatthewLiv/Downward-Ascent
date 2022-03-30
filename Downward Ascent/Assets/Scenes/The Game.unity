@@ -321,7 +321,7 @@ MonoBehaviour:
   - {fileID: 5951131632996271965, guid: db275bad56f51e44a98a92e6bfaa8563, type: 3}
   - {fileID: 5256869737931693677, guid: d5f3d7d5a142a384184d3fc976d60bdd, type: 3}
   - {fileID: 4554231615468015380, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
-  Person: {fileID: 8367355756942026709, guid: e178317e663997648bb5f1ba89afbc9c, type: 3}
+  Person: {fileID: 5040788255272553554, guid: 3f692f4b5733af044bccbfea65b3f88f, type: 3}
   EndScreen: {fileID: 8847197012801529501, guid: b03cbc3d4b273ae4089ac010c5ff9b93, type: 3}
   navSurface: {fileID: 943082613}
   Skeleton: {fileID: 1223951896337138014, guid: 47cdb66f2b1d3664da43856e0b922a89, type: 3}
