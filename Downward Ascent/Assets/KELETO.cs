@@ -43,6 +43,7 @@ public class KELETO : MonoBehaviour
         //ayer = GameObject.Find("SwordPerson(Clone)").transform;
         //ayer = GameObject.Find("SwordPerson").transform;
         ayer = GameObject.Find("WorkingSword(Clone)").transform;
+        //ayer = GameObject.Find("WorkingSword").transform;
 
 
 

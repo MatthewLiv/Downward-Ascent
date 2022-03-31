@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -197,7 +197,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.051e-42, y: -5.4786747e+19, z: 4.5904e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943082612}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
@@ -323,7 +323,6 @@ MonoBehaviour:
   - {fileID: 4554231615468015380, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
   Person: {fileID: 5040788255272553554, guid: 3f692f4b5733af044bccbfea65b3f88f, type: 3}
   EndScreen: {fileID: 8847197012801529501, guid: b03cbc3d4b273ae4089ac010c5ff9b93, type: 3}
-  navSurface: {fileID: 943082613}
   Skeleton: {fileID: 1223951896337138014, guid: 47cdb66f2b1d3664da43856e0b922a89, type: 3}
 --- !u!4 &1858746766
 Transform:
