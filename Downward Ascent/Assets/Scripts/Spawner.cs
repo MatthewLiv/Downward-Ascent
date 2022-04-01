@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
     //public NavMeshSurface navSurface;
 
     public GameObject Skeleton;
-
+    //private GameObject skel;
 
 
     // Start is called before the first frame update
@@ -59,6 +59,8 @@ public class Spawner : MonoBehaviour
         NavMeshBuilder.BuildNavMesh();
         //navSurface.BuildNavMesh();
 
+        spawnSkels();
+
 
 
 
@@ -70,7 +72,7 @@ public class Spawner : MonoBehaviour
         keepGoing = true;
         //Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
 
-        Instantiate(Skeleton, new Vector3(10, 5, 20), Skeleton.transform.rotation);
+        //Instantiate(Skeleton, new Vector3(10, 5, 20), Skeleton.transform.rotation);
 
 
     }
@@ -559,6 +561,25 @@ public class Spawner : MonoBehaviour
        }
     }
 
+
+
+
+    private void spawnSkels()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            int x = Random.Range(-16, 32);
+            int y = Random.Range(-54, 16);
+            int z = Random.Range(-16, 32);
+            Instantiate(Skeleton, new Vector3(x, y, z), Skeleton.transform.rotation);
+        }
+    }
+
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {
@@ -588,6 +609,7 @@ public class Spawner : MonoBehaviour
                     Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
                     done = true;
                     keepGoing = false;
+                   
                 }
                 
                 //SceneManager.LoadScene(1);
