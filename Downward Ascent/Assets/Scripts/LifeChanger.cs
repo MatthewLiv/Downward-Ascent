@@ -64,4 +64,14 @@ public class LifeChanger : MonoBehaviour
         
        // scoretext.text = score.ToString();
     }
+
+    public static int GetLives()
+    {
+        return score;
+    }
+
+    public static void SetLives(int l)
+    {
+        score = l;
+    }
 }
