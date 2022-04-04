@@ -124,7 +124,7 @@ public class Skeleton : MonoBehaviour
             
             transform.Translate(0, 0, Time.deltaTime);
 
-            RaycastHit hit;
+            /*RaycastHit hit;
             Ray landingRay = new Ray(transform.position, Vector3.down);
 
 
@@ -145,7 +145,7 @@ public class Skeleton : MonoBehaviour
             else
             {
                 currentR = transform.eulerAngles.y;
-            }
+            }*/
         }
         
         void ChasePlayer()
