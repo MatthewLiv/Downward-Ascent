@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class DeathScene : MonoBehaviour
 {
     
+    void Start()
+    {
+        PlayerPrefs.SetInt("Lives", 4);
+    }
 
     // Update is called once per frame
     void Update()

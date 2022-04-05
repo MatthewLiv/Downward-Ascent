@@ -17,7 +17,19 @@ public class LifeChanger : MonoBehaviour
 
     void Start()
     {
-        score = 4;
+        
+        if (PlayerPrefs.HasKey("Lives"))
+        {
+            score = PlayerPrefs.GetInt("Lives");
+        }
+
+        else
+        {
+            score = 4;
+        }
+        
+      
+
         //scoretext.text = "4";
         area = 1;
         level = 1;

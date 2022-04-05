@@ -71,11 +71,7 @@ public class Spawner : MonoBehaviour
         Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
 
 
-        if (PlayerPrefs.HasKey("Lives"))
-        {
-            Debug.Log("this runs");
-            LifeChanger.SetLives(PlayerPrefs.GetInt("Lives"));
-        }
+        
 
 
         keepGoing = true;
@@ -631,9 +627,7 @@ public class Spawner : MonoBehaviour
         {
             if (Input.GetKeyDown("space"))
             {
-                int L = LifeChanger.GetLives();
-                
-                PlayerPrefs.SetInt("Lives", L);
+                PlayerPrefs.SetInt("Lives", LifeChanger.GetLives());
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             }

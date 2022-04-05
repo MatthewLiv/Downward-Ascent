@@ -80,7 +80,7 @@ public class KELETO : MonoBehaviour
 
         if (!playerInSightRange)
         {
-            playerInSightRange = Physics.CheckSphere(transform.position, 7, player);
+            playerInSightRange = Physics.CheckSphere(transform.position, 11, player);
             if (playerInSightRange)
             {
                 mAnimator.SetTrigger("Seen");
