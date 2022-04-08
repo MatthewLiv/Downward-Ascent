@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class KELETO : MonoBehaviour
+public class RoamKelt : MonoBehaviour
 {
 
     private float currentR;
@@ -22,6 +22,9 @@ public class KELETO : MonoBehaviour
 
     private bool dead;
     private float deathTime;
+
+    public bool WalkPointSet;
+    public Vector3 walkPoint;
 
 
     //SpriteRenderer rend;
@@ -45,6 +48,8 @@ public class KELETO : MonoBehaviour
         ayer = GameObject.Find("WorkingSword(Clone)").transform;
         //ayer = GameObject.Find("WorkingSword").transform;
 
+        WalkPointSet = false;
+
 
 
         /*if (ayer == null)
@@ -63,7 +68,7 @@ public class KELETO : MonoBehaviour
 
         //Debug.Log(mAnimator.enabled);
 
-        
+
 
         //Debug.Log(ayer);
         if (dead)
@@ -121,7 +126,17 @@ public class KELETO : MonoBehaviour
         {
 
 
+            if (!WalkPointSet)
+            {
+                FindWalkPoint();
+            }
 
+            Vector3 distToWalkPoint = transform.position - walkPoint;
+
+            if (distToWalkPoint.magnitude < 1)
+            {
+                WalkPointSet = false;
+            }
 
 
 
@@ -175,7 +190,16 @@ public class KELETO : MonoBehaviour
 
     }
 
+    private void FindWalkPoint()
+    {
+        float randomX = Random.Range(-16, 32);
+        float randomZ = Random.Range(-16, 32);
 
+        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        WalkPointSet = true;
+        enemy.SetDestination(walkPoint);
+    }
 
     private void OnTriggerEnter(Collider col)
     {

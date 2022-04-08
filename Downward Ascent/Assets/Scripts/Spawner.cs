@@ -571,7 +571,9 @@ public class Spawner : MonoBehaviour
 
     private void spawnSkels()
     {
-        for (int i = 0; i < 32; i++)
+        int k = Random.Range(20, 48);
+
+        for (int i = 0; i < k; i++)
         {
             int x = Random.Range(-16, 32);
             int y = Random.Range(-54, 16);
@@ -628,6 +630,7 @@ public class Spawner : MonoBehaviour
             if (Input.GetKeyDown("space"))
             {
                 PlayerPrefs.SetInt("Lives", LifeChanger.GetLives());
+                //PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             }

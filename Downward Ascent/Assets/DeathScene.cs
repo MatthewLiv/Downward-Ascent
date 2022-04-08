@@ -9,6 +9,8 @@ public class DeathScene : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Lives", 4);
+        PlayerPrefs.DeleteKey("Level");
+        PlayerPrefs.DeleteKey("Area");
     }
 
     // Update is called once per frame

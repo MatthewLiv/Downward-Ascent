@@ -122,7 +122,11 @@ public class Skeleton : MonoBehaviour
         else
         {
             
-            transform.Translate(0, 0, Time.deltaTime);
+            //transform.Translate(0, 0, Time.deltaTime);
+            if (Random.Range(0, 10) == 5)
+            {
+                transform.Rotate(180, 0, 0);
+            }
 
             /*RaycastHit hit;
             Ray landingRay = new Ray(transform.position, Vector3.down);
