@@ -23,12 +23,12 @@ public class KELETO : MonoBehaviour
     private bool dead;
     private float deathTime;
 
-    public bool roting;
-    public int rotamount;
-    public int rot;
-    public bool negrot;
+    private bool roting;
+    private int rotamount;
+    private int rot;
+    private bool negrot;
 
-    public int rotChance;
+    //public int rotChance;
 
     //SpriteRenderer rend;
 
@@ -164,7 +164,7 @@ public class KELETO : MonoBehaviour
 
 
 
-            if (Random.Range(0, rotChance) == 5)
+            if (Random.Range(0, 270) == 5)
             {
                 roting = true;
                 rotamount = Random.Range(45, 160);

@@ -44,6 +44,11 @@ MonoBehaviour:
     m_Bits: 8
   P: {fileID: 8367355756942026709, guid: e178317e663997648bb5f1ba89afbc9c, type: 3}
   enemy: {fileID: 6365335456900368282}
+  roting: 0
+  rotamount: 0
+  rot: 0
+  negrot: 0
+  rotChance: 0
 --- !u!195 &6365335456900368282
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -66,25 +71,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7100139844112243597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223951896337138014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5f8219f9cdefa4398b72a2f8fc0c63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    serializedVersion: 2
-    m_Bits: 8
-  P: {fileID: 5040788255272553554, guid: 3f692f4b5733af044bccbfea65b3f88f, type: 3}
-  enemy: {fileID: 6365335456900368282}
-  WalkPointSet: 0
-  walkPoint: {x: 0, y: 0, z: 0}
 --- !u!54 &5815868361420492214
 Rigidbody:
   m_ObjectHideFlags: 0
