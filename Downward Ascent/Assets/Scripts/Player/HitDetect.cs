@@ -15,7 +15,7 @@ public class HitDetect : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        //Debug.Log("Works");
+        Debug.Log("Works");
         if (col.gameObject.name == "Object01")
         {
             
@@ -27,6 +27,7 @@ public class HitDetect : MonoBehaviour
             t = Time.time;
             
         }
+        
         
     }
 
