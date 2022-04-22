@@ -69,6 +69,7 @@ public class Spawner : MonoBehaviour
         //create player
 
         Person = Instantiate(Person, new Vector3(7.5f, 5f, 7.5f), Person.transform.rotation);
+        TriggerThis.SetPlayer(Person.transform);
 
 
         

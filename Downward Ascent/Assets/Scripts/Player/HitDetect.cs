@@ -7,15 +7,15 @@ using UnityEngine.SceneManagement;
 public class HitDetect : MonoBehaviour
 {
 
-    public GameObject Redscreen;
+    public  GameObject Redscreen;
     private bool hit = false;
     private float t;
     private GameObject r;
 
-
+    //This code works
     private void OnTriggerEnter(Collider col)
     {
-        Debug.Log("Works");
+        //Debug.Log("Works");
         if (col.gameObject.name == "Object01")
         {
             
@@ -31,7 +31,10 @@ public class HitDetect : MonoBehaviour
         
     }
 
-    void Update()
+
+
+
+     void Update()
     {
         if (hit)
         {
@@ -47,5 +50,11 @@ public class HitDetect : MonoBehaviour
         }
     }
     
+
+
+    
+
+
+
 
 }
