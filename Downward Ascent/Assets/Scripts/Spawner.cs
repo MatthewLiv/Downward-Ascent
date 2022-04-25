@@ -169,7 +169,8 @@ public class Spawner : MonoBehaviour
                 }
                 else
                 {
-                    g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    int AR = Random.Range(0, pass.Length);
+                    g = Instantiate(pass[AR], new Vector3(0, 0, 0), pass[AR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     spot = UpdateSpot(spot);
@@ -230,7 +231,8 @@ public class Spawner : MonoBehaviour
                 }
                 else
                 {
-                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    int AR = Random.Range(0, pass.Length);
+                    GameObject g = Instantiate(pass[AR], new Vector3(0, 0, 0), pass[AR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     ChangeDirection();
@@ -264,7 +266,8 @@ public class Spawner : MonoBehaviour
                 // pass and keep going yall
                 else
                 {
-                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    int AR = Random.Range(0, pass.Length);
+                    GameObject g = Instantiate(pass[AR], new Vector3(0, 0, 0), pass[AR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     //Debug.Log(newspot + "   " + spot);
@@ -326,7 +329,8 @@ public class Spawner : MonoBehaviour
                 }
                 else
                 {
-                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    int AR = Random.Range(0, pass.Length);
+                    GameObject g = Instantiate(pass[AR], new Vector3(0, 0, 0), pass[AR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     ChangeDirection();
@@ -360,7 +364,8 @@ public class Spawner : MonoBehaviour
                 // pass and keep going yall
                 else
                 {
-                    GameObject g = Instantiate(pass[0], new Vector3(0, 0, 0), pass[0].transform.rotation);
+                    int AR = Random.Range(0, pass.Length);
+                    GameObject g = Instantiate(pass[AR], new Vector3(0, 0, 0), pass[AR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     //Debug.Log(newspot + "   " + spot);
@@ -554,7 +559,7 @@ public class Spawner : MonoBehaviour
         else if (type == 1)
         {
             //how many downs there are is n
-            n = Random.Range(0, 1);
+            n = Random.Range(0, 2);
             g = Instantiate(pass[n], new Vector3(0, 0, 0), pass[n].transform.rotation);
             return g;
         }
