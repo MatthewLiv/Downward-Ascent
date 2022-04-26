@@ -289,7 +289,7 @@ public class Spawner : MonoBehaviour
 
     private int SpawnBott(int spot, int i)
     {
-        int EndNum = Random.Range(0, 3);
+        int EndNum = Random.Range(0, 5);
         //if weve gone through everything else
         if (i == 8)
         {
