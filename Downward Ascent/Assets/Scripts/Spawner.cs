@@ -160,7 +160,8 @@ public class Spawner : MonoBehaviour
                 if (r == 0)
                 {
                     down = true;
-                    g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    int DR = Random.Range(0, downs.Length);
+                    g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     //fill(spot + 1);
@@ -179,7 +180,8 @@ public class Spawner : MonoBehaviour
 
             if (!down)
             {
-                g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                int DR = Random.Range(0, downs.Length);
+                g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
                 placeR(g, trans[spot].x, trans[spot].z);
                 path[spot] = true;
                
@@ -195,7 +197,8 @@ public class Spawner : MonoBehaviour
         //if weve gone through everything else
         if (i == 8)
         {
-            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            int DR = Random.Range(0, downs.Length);
+            GameObject g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
             return spot;
@@ -204,7 +207,8 @@ public class Spawner : MonoBehaviour
         int r = Random.Range(0, 9);
         if (r == 0)
         {
-            GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+            int DR = Random.Range(0, downs.Length);
+            GameObject g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
             placeR(g, trans[spot].x, trans[spot].z);
             path[spot] = true;
             fill(false);
@@ -223,7 +227,8 @@ public class Spawner : MonoBehaviour
                 //if there is nowhere to go go down
                 if (nextspot == -1)
                 {
-                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    int DR = Random.Range(0, downs.Length);
+                    GameObject g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     fill(false);
@@ -257,7 +262,8 @@ public class Spawner : MonoBehaviour
                 //if something is already there then go down
                 if (path[newspot])
                 {
-                    GameObject g = Instantiate(downs[0], new Vector3(0, 0, 0), downs[0].transform.rotation);
+                    int DR = Random.Range(0, downs.Length);
+                    GameObject g = Instantiate(downs[DR], new Vector3(0, 0, 0), downs[DR].transform.rotation);
                     placeR(g, trans[spot].x, trans[spot].z);
                     path[spot] = true;
                     fill(false);
@@ -552,21 +558,21 @@ public class Spawner : MonoBehaviour
         if (type == 0 && !b)
         {
             //how many downs there are is n
-            n = Random.Range(0, 1);
+            n = Random.Range(0, downs.Length);
             g = Instantiate(downs[n], new Vector3(0, 0, 0), downs[n].transform.rotation);
             return g;
         }
         else if (type == 1)
         {
             //how many downs there are is n
-            n = Random.Range(0, 2);
+            n = Random.Range(0, pass.Length);
             g = Instantiate(pass[n], new Vector3(0, 0, 0), pass[n].transform.rotation);
             return g;
         }
         else
         {
             //how many downs there are is n
-            n = Random.Range(0, 1);
+            n = Random.Range(0, stops.Length);
             g = Instantiate(stops[n], new Vector3(0, 0, 0), stops[n].transform.rotation);
             return g;
        }

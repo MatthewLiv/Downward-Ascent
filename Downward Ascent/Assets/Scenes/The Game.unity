@@ -590,10 +590,15 @@ MonoBehaviour:
   - {fileID: 5904950125717317211, guid: 73912cbcef910aa4ab12d91454da045d, type: 3}
   - {fileID: 4379185253196032133, guid: b7e454ed3d7224e4fa8d2170301df6ba, type: 3}
   downs:
-  - {fileID: 7338824886131006890, guid: 241d96a9be8c9e34ab9e3de86f4f31ee, type: 3}
+  - {fileID: 1256464484979831860, guid: ccbb56f047c1ddc46aa409143dd2733a, type: 3}
+  - {fileID: 2377238823135179594, guid: c06f373a89266e347bdcb674057b2fbf, type: 3}
+  - {fileID: 3302500402961007362, guid: a6cdadbfdf73d474a9d79aedbea1bcbc, type: 3}
   pass:
-  - {fileID: 7478086185433738180, guid: 86a19ff5ecc0e584f9402ddc6706df3a, type: 3}
+  - {fileID: 7732464446901502249, guid: 60a1c71d98d0fc545b1bc0ffe66cf885, type: 3}
   - {fileID: 7363641245081121696, guid: e0fbf38ce35bf174180ce776d71d23f7, type: 3}
+  - {fileID: 9062574119631393259, guid: 94f56bbd53a7ddb4aa94a94bd3967844, type: 3}
+  - {fileID: 8597311818998877848, guid: bf96155cd72f64c438a7d0e0275ed152, type: 3}
+  - {fileID: 1315528510792632101, guid: f8c85cbc5cad73d4aa5e35ff0818dc1d, type: 3}
   stops:
   - {fileID: 1751197760115959432, guid: c124a45859350274cbc23cb916491c02, type: 3}
   ends:
@@ -601,7 +606,7 @@ MonoBehaviour:
   - {fileID: 2555542185769909170, guid: 5b82d54a1613ab34fb63a564aa1cd75c, type: 3}
   - {fileID: 8754991594375605953, guid: d14b3962d1a1ce940aac32aef3b045ba, type: 3}
   - {fileID: 1048210423308523635, guid: dadfffbb1b3ed2b448183f610ca2795b, type: 3}
-  - {fileID: 4554231615468015380, guid: 1cc8c47a42763734d8596fcb6b4bcfac, type: 3}
+  - {fileID: 3905701649679113272, guid: f1b45ce16c4214842bebda7bc9f7c8a4, type: 3}
   Person: {fileID: 5040788255272553554, guid: 3f692f4b5733af044bccbfea65b3f88f, type: 3}
   EndScreen: {fileID: 8847197012801529501, guid: b03cbc3d4b273ae4089ac010c5ff9b93,
     type: 3}
