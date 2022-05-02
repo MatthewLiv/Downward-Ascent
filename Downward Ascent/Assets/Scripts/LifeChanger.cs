@@ -57,7 +57,7 @@ public class LifeChanger : MonoBehaviour
             area = 1;
         }
 
-        leveltext.text = area.ToString() + "-" + level.ToString();
+        leveltext.text = level.ToString() + "/5";
     }
 
     // Update is called once per frame
