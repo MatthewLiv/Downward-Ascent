@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LifeChanger : MonoBehaviour
 {
@@ -10,10 +11,10 @@ public class LifeChanger : MonoBehaviour
 
     public Text leveltext;
     private int area;
-    private int level;
+    public static int level;
 
-    public Text Moneytext;
-    private int money;
+    /*public Text Moneytext;
+    private int money;*/
 
     void Start()
     {
@@ -35,26 +36,25 @@ public class LifeChanger : MonoBehaviour
         //level = 1;
         if (PlayerPrefs.HasKey("Level"))
         {
+            if (PlayerPrefs.GetInt("Level") == 6)
+            {
+                SceneManager.LoadScene("Start Screen");
+            }
             level = PlayerPrefs.GetInt("Level");
-            area = PlayerPrefs.GetInt("Area");
-            if (level == 4)
-            {
-                PlayerPrefs.SetInt("Level", 1);
-                PlayerPrefs.SetInt("Area", PlayerPrefs.GetInt("Area") + 1);
-            }
-            else
-            {
+            
+            
+            
+            
                 PlayerPrefs.SetInt("Level", level + 1);
-            }
+            
             
         }
 
         else
         {
-            PlayerPrefs.SetInt("Level", 2);
-            level = 1;
-            PlayerPrefs.SetInt("Area", 1);
-            area = 1;
+            PlayerPrefs.SetInt("Level", 6);
+            level = 5;
+            
         }
 
         leveltext.text = level.ToString() + "/5";
@@ -81,11 +81,11 @@ public class LifeChanger : MonoBehaviour
             leveltext.text = area.ToString() + "-" + level.ToString();
         }*/
 
-        if (Input.GetKeyDown("s"))
+        /*if (Input.GetKeyDown("s"))
         {
             money += 500;
             Moneytext.text = "$" + money;
-        }
+        }*/
     }
 
     public static void LoseLife()
@@ -110,5 +110,10 @@ public class LifeChanger : MonoBehaviour
     public static void SetLives(int l)
     {
         score = l;
+    }
+
+    public static int GetLevel()
+    {
+        return level;
     }
 }

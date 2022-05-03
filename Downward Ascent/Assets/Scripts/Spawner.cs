@@ -605,9 +605,9 @@ public class Spawner : MonoBehaviour
 
         RaycastHit hit;
         Ray landingRay = new Ray(Person.transform.position, Vector3.down);
-        
-        
 
+
+        
 
         if (Input.GetKeyDown("k"))
         {
@@ -622,6 +622,10 @@ public class Spawner : MonoBehaviour
         {
             if (hit.collider.tag == "End" && !done)
             {
+                if (LifeChanger.GetLevel() == 5)
+                {
+                    SceneManager.LoadScene("Start Screen");
+                }
                 //SceneManager.UnloadSceneAsync(0);
                 if (keepGoing)
                 {
@@ -643,6 +647,10 @@ public class Spawner : MonoBehaviour
             {
                 PlayerPrefs.SetInt("Lives", LifeChanger.GetLives());
                 //PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
+
+                
+
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
             }
