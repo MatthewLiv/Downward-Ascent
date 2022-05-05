@@ -9,6 +9,7 @@ using UnityEditor.AI;
 
 public class Spawner : MonoBehaviour
 {
+    
     public GameObject[] Starters;
     
     public GameObject[] downs;
@@ -79,7 +80,7 @@ public class Spawner : MonoBehaviour
         //Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
 
         //Instantiate(Skeleton, new Vector3(10, 5, 20), Skeleton.transform.rotation);
-
+        
 
     }
       
