@@ -203,6 +203,18 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+
+        if (PauseMenu.GameIsPaused)
+        {
+            cameraCanMove = false;
+        }
+
+        else
+        {
+            cameraCanMove = true;
+        }
+
+
         #region Camera
 
         // Control camera movement

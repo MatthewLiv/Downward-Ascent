@@ -41,7 +41,7 @@ public class TriggerThis : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(new Vector3(Player.position.x, Player.position.y + 0.6f, Player.position.z));
+        //Debug.Log(new Vector3(Player.position.x, Player.position.y + 0.6f, Player.position.z));
         if (hit)
         {
             if (Time.time - t > 0.3)
