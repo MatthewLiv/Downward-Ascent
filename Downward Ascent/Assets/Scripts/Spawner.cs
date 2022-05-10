@@ -625,7 +625,7 @@ public class Spawner : MonoBehaviour
             {
                 if (LifeChanger.GetLevel() == 5)
                 {
-                    SceneManager.LoadScene("Start Screen");
+                    SceneManager.LoadScene("End Scene");
                 }
                 //SceneManager.UnloadSceneAsync(0);
                 if (keepGoing)
