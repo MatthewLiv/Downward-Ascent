@@ -164,7 +164,7 @@ public class KELETO : MonoBehaviour
 
 
 
-            if (Random.Range(0, 270) == 5)
+            if (Random.Range(0, 200) == 5 && !PauseMenu.GameIsPaused)
             {
                 roting = true;
                 rotamount = Random.Range(45, 160);

@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathScene : MonoBehaviour
+public class EndingOptions : MonoBehaviour
 {
-    
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
-        PlayerPrefs.SetInt("Lives", 4);
-        PlayerPrefs.SetInt("Level", 4);
-        
     }
 
-    public void menU()
+    
+    public void Menu()
     {
         SceneManager.LoadScene("Start Screen");
     }
 
-    public void Rerun()
+    public void ReRun()
     {
+        PlayerPrefs.SetInt("Level", 5);
+        PlayerPrefs.SetInt("Lives", 4);
         SceneManager.LoadScene("The Game");
     }
 
-    public void QuitGame()
+    public void Quit()
     {
         Debug.Log("Game Quit");
         Application.Quit();
