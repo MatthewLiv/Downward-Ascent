@@ -15,6 +15,7 @@ public class KillFall : MonoBehaviour
         //Debug.Log(col.gameObject.name);
         if (col.gameObject.name == "WorkingSword(Clone)")
         {
+
             SceneManager.LoadScene("Death Screen");
         }
 
