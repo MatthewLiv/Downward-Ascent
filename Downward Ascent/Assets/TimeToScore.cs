@@ -12,7 +12,37 @@ public class TimeToScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timetext.text = "Time: " + PlayerPrefs.GetInt("Time").ToString();
+
+        int t = PlayerPrefs.GetInt("Time");
+
+
+        int mins = t / 60;
+
+        int secs = t % 60;
+
+         if (mins > 9 && secs > 9)
+         {
+             timetext.SetText("Time: " + mins.ToString() + ":" + secs.ToString());
+         }
+
+         else if (mins > 9)
+         {
+             timetext.SetText("Time: " + mins.ToString() + ":0" + secs.ToString());
+         }
+
+         else if (secs > 9)
+         {
+             timetext.SetText("Time: 0" + mins.ToString() + ":" + secs.ToString()); 
+         }
+
+         else
+         {
+             timetext.SetText("Time: 0" + mins.ToString() + ":0" + secs.ToString());
+         }
+
+        
+
+        
     }
 
     
