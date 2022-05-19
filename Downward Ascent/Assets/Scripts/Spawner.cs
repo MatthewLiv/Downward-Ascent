@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         populatetrans();
         level = 0;
         int nextspot = SpawnTop();
@@ -633,7 +634,8 @@ public class Spawner : MonoBehaviour
                     Instantiate(EndScreen, new Vector3(0, 0, 0), EndScreen.transform.rotation);
                     done = true;
                     keepGoing = false;
-                   
+                    PlayerPrefs.SetInt("Time", PlayerPrefs.GetInt("Time") + TimeKeeper.t);
+                    Time.timeScale = 0;
                 }
                 
                 //SceneManager.LoadScene(1);

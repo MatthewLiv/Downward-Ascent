@@ -21,6 +21,7 @@ public class DeathScene : MonoBehaviour
 
     public void Rerun()
     {
+        PlayerPrefs.SetInt("Time", 0);
         SceneManager.LoadScene("The Game");
     }
 

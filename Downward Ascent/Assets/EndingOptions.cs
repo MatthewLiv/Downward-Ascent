@@ -19,8 +19,9 @@ public class EndingOptions : MonoBehaviour
 
     public void ReRun()
     {
-        PlayerPrefs.SetInt("Level", 5);
+        PlayerPrefs.SetInt("Level", 4);
         PlayerPrefs.SetInt("Lives", 4);
+        PlayerPrefs.SetInt("Time", 0);
         SceneManager.LoadScene("The Game");
     }
 

@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayerPrefs.SetInt("Level", 1);
         PlayerPrefs.SetInt("Lives", 4);
+        PlayerPrefs.SetInt("Time", 0);
         SceneManager.LoadScene("The Game");
 
     }

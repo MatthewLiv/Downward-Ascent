@@ -6,11 +6,12 @@ public class TimeKeeper : MonoBehaviour
 {
 
     public Text playerTime;
+    public static int t;
 
     // Update is called once per frame
     void Update()
     {
-        int t = (int) Time.timeSinceLevelLoad;
+        t = (int) Time.timeSinceLevelLoad;
         int mins = t / 60;
         //playerTime.text = mins.ToString() + ":" + (t % 60).ToString();
         if (t % 60 > 9 && mins > 9)
