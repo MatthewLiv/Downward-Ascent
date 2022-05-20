@@ -7,6 +7,7 @@ public class ScoreCalculator : MonoBehaviour
 {
 
     public TextMeshProUGUI Scoretext;
+    public static int Score;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class ScoreCalculator : MonoBehaviour
 
         int tim = PlayerPrefs.GetInt("Time");
 
-        int Score = livcalc - (10 * tim);
+        Score = livcalc - (10 * tim);
 
         Scoretext.SetText("Score: " + Score.ToString());
 

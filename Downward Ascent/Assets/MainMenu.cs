@@ -13,15 +13,15 @@ public class MainMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
 
-        //if (Random.Range(0, 2) == 0)
-        //{
+        if (Random.Range(0, 2) == 0)
+        {
             song1.SetActive(true);
-       /// }
+        }
 
-        //else
-        //{
+        else
+        {
             song2.SetActive(true);
-//}
+        }
     }
    
     public void PlayGame()
