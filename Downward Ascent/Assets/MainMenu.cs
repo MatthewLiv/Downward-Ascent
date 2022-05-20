@@ -6,9 +6,22 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    public GameObject song1;
+    public GameObject song2;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+
+        //if (Random.Range(0, 2) == 0)
+        //{
+            song1.SetActive(true);
+       /// }
+
+        //else
+        //{
+            song2.SetActive(true);
+//}
     }
    
     public void PlayGame()
