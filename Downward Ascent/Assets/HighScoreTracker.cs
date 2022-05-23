@@ -6,7 +6,7 @@ public class HighScoreTracker : MonoBehaviour
 {
 
     public TextMeshProUGUI HighScoretext;
-    public 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class HighScoreTracker : MonoBehaviour
 
     public static void SetHigh(int current)
     {
-        if (PlayerPrefs.HasKey("HighScore"))
+       /* if (PlayerPrefs.HasKey("HighScore"))
         {
             int high = PlayerPrefs.GetInt("HighScore");
 
@@ -70,7 +70,7 @@ public class HighScoreTracker : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", current);
             HighScoretext.SetText("High-Score: " + current.ToString());
-        }
+        }*/
     }
 
     
