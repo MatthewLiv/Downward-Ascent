@@ -20,6 +20,7 @@ public class ScoreCalculator : MonoBehaviour
         Score = livcalc - (10 * tim);
 
         Scoretext.SetText("Score: " + Score.ToString());
+        HighScoreTracker.SetHigh(Score);
 
 
     }

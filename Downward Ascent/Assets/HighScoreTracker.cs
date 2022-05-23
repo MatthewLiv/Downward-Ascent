@@ -6,30 +6,71 @@ public class HighScoreTracker : MonoBehaviour
 {
 
     public TextMeshProUGUI HighScoretext;
+    public 
 
     // Start is called before the first frame update
     void Start()
     {
+        /*int past = PlayerPrefs.GetInt("HighScore");
+        int current = ScoreCalculator.Score;
         if (PlayerPrefs.HasKey("HighScore"))
         {
-            int past = PlayerPrefs.GetInt("HighScore");
-            int current = ScoreCalculator.Score;
+            
 
-            Debug.Log(ScoreCalculator.Score);
+           // Debug.Log(ScoreCalculator.Score);
             if (current > past)
             {
                 PlayerPrefs.SetInt("HighScore", current);
-                
+                HighScoretext.SetText("High-Score: " + current.ToString());
+            }
+
+            else
+            {
+                HighScoretext.SetText("High-Score: " + past.ToString());
             }
         }
 
         else
         {
-            PlayerPrefs.SetInt("HighScore", ScoreCalculator.Score);
+            PlayerPrefs.SetInt("HighScore", current);
+            HighScoretext.SetText("High-Score: " + current.ToString());
         }
 
+        */
+        
+    }
 
-        HighScoretext.SetText("High-Score: " + PlayerPrefs.GetInt("HighScore").ToString());
+    void Update()
+    {
+        if (Input.GetKeyDown("u"))
+        {
+            PlayerPrefs.SetInt("HighScore", 800);
+        }
+    }
+
+    public static void SetHigh(int current)
+    {
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            int high = PlayerPrefs.GetInt("HighScore");
+
+            if (current > high)
+            {
+                PlayerPrefs.SetInt("HighScore", current);
+                HighScoretext.SetText("High-Score: " + current.ToString());
+            }
+
+            else
+            {
+                HighScoretext.SetText("High-Score: " + high.ToString());
+            }
+        }
+
+        else
+        {
+            PlayerPrefs.SetInt("HighScore", current);
+            HighScoretext.SetText("High-Score: " + current.ToString());
+        }
     }
 
     
