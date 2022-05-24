@@ -35,6 +35,11 @@ public class Spawner : MonoBehaviour
     public GameObject Skeleton;
     //private GameObject skel;
 
+    public GameObject song1;
+    public GameObject song2;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +86,16 @@ public class Spawner : MonoBehaviour
         //Instantiate(HUD, new Vector3(0, 0, 0), HUD.transform.rotation);
 
         //Instantiate(Skeleton, new Vector3(10, 5, 20), Skeleton.transform.rotation);
-        
+
+        if (Random.Range(0, 2) == 0)
+        {
+            song1.SetActive(true);
+        }
+
+        else
+        {
+            song2.SetActive(true);
+        }
 
     }
       

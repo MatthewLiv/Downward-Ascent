@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.08458171, g: 0.0057737613, b: 0.00022180806, a: 1}
+  m_IndirectSpecularColor: {r: 0.08467357, g: 0.005785706, b: 0.00022206595, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1818,6 +1818,8 @@ MonoBehaviour:
     type: 3}
   Skeleton: {fileID: 1223951896337138014, guid: 47cdb66f2b1d3664da43856e0b922a89,
     type: 3}
+  song1: {fileID: 545328440}
+  song2: {fileID: 199641950}
 --- !u!4 &1858746766
 Transform:
   m_ObjectHideFlags: 0

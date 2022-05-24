@@ -9,6 +9,7 @@ public class EndingOptions : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        
     }
 
     
