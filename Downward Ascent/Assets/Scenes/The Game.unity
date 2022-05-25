@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 199641951}
   m_Layer: 0
   m_Name: Song 2
-  m_TagString: Untagged
+  m_TagString: GameMusic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -524,7 +524,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 381343c82746f82418dff6dc7036900f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2d5add09c34222244944e9245caa7155, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

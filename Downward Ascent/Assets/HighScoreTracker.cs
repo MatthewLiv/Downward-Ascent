@@ -34,9 +34,9 @@ public class HighScoreTracker : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", current);
             HighScoretext.SetText("High-Score: " + current.ToString());
-        }
+        }*/
 
-        */
+        
         
     }
 
@@ -48,30 +48,7 @@ public class HighScoreTracker : MonoBehaviour
         }
     }
 
-    public static void SetHigh(int current)
-    {
-       /* if (PlayerPrefs.HasKey("HighScore"))
-        {
-            int high = PlayerPrefs.GetInt("HighScore");
-
-            if (current > high)
-            {
-                PlayerPrefs.SetInt("HighScore", current);
-                HighScoretext.SetText("High-Score: " + current.ToString());
-            }
-
-            else
-            {
-                HighScoretext.SetText("High-Score: " + high.ToString());
-            }
-        }
-
-        else
-        {
-            PlayerPrefs.SetInt("HighScore", current);
-            HighScoretext.SetText("High-Score: " + current.ToString());
-        }*/
-    }
+   
 
     
 }
